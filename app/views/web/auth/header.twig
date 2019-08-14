@@ -1,0 +1,42 @@
+<header>
+    <div id="header" class="header">
+        <div class="header_content">
+
+            <a class="header_logo" href="{{ url() }}" title="Logo MojeÚklidovka …uklidíme váš stres.">
+                <svg class="icon icon-logo" viewBox="0 0 168 51.36"><use xlink:href="#logo"></use></svg>
+            </a>
+
+            <div class="header_right">
+                <nav>
+                    <ul id="navigation" class="navigation" role="navigation">
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuAuth', 'auth.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'authNews' %}is-active{% endif %}" href="/space/news">
+                                Novinky
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuAuth', 'auth.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'authCareer' %}is-active{% endif %}" href="/space/career">
+                                Kariéra
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuAuth', 'auth.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'authReviews' %}is-active{% endif %}" href="/space/reviews">
+                                Recenze
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuAuth', 'auth.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'authBlog' %}is-active{% endif %}" href="/space/blog">
+                                blog
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuAuth', 'auth.{{ data.currentRouteName }}');" class="navigation_link" href="/auth/logout" title="Odhlásit se">
+                                Odhlásit se
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

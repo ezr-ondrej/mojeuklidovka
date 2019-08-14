@@ -1,0 +1,143 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklid kanceláří - Praha 6</h1>
+            <p class="hero_text">od 1&nbsp;450,-&nbsp;Kč / měsíčně - týdenní úklid<br>
+                od 0,5 do 1,9 Kč/m² - denní úklid</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná objednávka úklidu">Nezávazně objednat</a>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">
+                    <span itemprop="name">Úklid kanceláří</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageOfficePrague6') }}" title="Úklid kanceláří - Praha 6">
+                    <span itemprop="name">Praha 6</span>
+                    <meta itemprop="position" content="4" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fNunito cBlue space-xxl u-mw-m u-center">Připojte se k našim spokojeným zákazníkům z Prahy 6.</h2>
+                <p class="space-xl">
+                    Využijte naše úklidové služby a přesvědčte se, že čisté kanceláře pomáhají k větší spokojenosti zaměstnanců a k prokazatelně lepším pracovním výkonům.
+                    Náš úklidový personál používá <strong>vlastní profesionální čistící prostředky</strong>, které jsou šetrné k povrchům Vašich kancelářských prostor a přitom zachovávají bezkonkurenční čistotu.
+                    Nabízíme <strong>pravidelný úklid kanceláří</strong>, <strong>komerčních</strong> nebo <strong>jiných prostor</strong> pro městské části Ruzyně, Liboc, Břevnov, Bubenec, Sedlec, Hradčany, Dejvice, Střešovice, Veleslavín, Suchdol, Lysolaje, Nebušice, Přední Kopanina a Vokovice. Naši klienti pro své kanceláře nejčastěji využívají pravidelnou formu úklidu s denní frekvencí.
+                </p>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Více o úklidu kanceláří" onClick="ga('send', 'event', 'Clicks', 'TextOffices', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOffice') }}">Více o úklidu kanceláří</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="uklidKancelari" class="section section-l bg-grayLight">
+            <div class="content content-s">
+                <div class="u-center">
+                    <h2 class="fs-xxl cGreen">Zákazníci, kteří se na nás spoléhají:</h2>
+                    <p class="space-xxl">Níže Vám představujeme několik vybranných společností, které si pro své kanceláře vybrali naše úklidové služby.</p>
+                </div>
+
+                <div class="row row-spaced cBlack space-xxxl">
+                    <div class="half">
+                        <div class="space-xxl">
+                            <h3 class="cBlue">MAREK & STANOVSKÝ</h3>
+                            <p class="space-l fs-s">Poskytují komplexní právní služby. A to zejména v oblasti soukromého práva, se zaměřením na obecné smluvní právo. Pomohou Vám na nejvyšší odborné úrovni a v případě potřeby i s zahraničním dopadem.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://www.ms-ak.cz/" class="is-highlighted" title="Advokátní kancelář - MAREK & STANOVSKÝ">ms-ak.cz</a></b><br>
+                                Adresa: <b class="strong">Na hutích, 160 00 Praha 6 - Dejvice</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1521.767506728486!2d14.396209077043663!3d50.09943485675486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b952389cd9885%3A0x89f11516e21b212a!2sNa+Hut%C3%ADch%2C+160+00+Praha+6!5e0!3m2!1scs!2scz!4v1544535503040" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="cBlue">PROFISIGN plus</h3>
+                            <p class="space-l fs-s">Zastupují renomované výrobce zařízení a strojů pro výrobu reklamy. Působí jako dodavatelé materiálů, příslušenství a dokončovacích zařízení. Nabízí vše, co reklamní agentura potřebuje pro svoji produkci.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://www.profisignplus.cz/" class="is-highlighted" title="Zařízení a stroje pro výrobu reklamy - PROFISIGN plus">profisignplus.cz</a></b><br>
+                                Adresa: <b class="strong">Papírenská, 160 00  Praha 6 – Bubeneč</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.6625779944446!2d14.39826062925128!3d50.11155195875807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b952d8ad44cab%3A0xac8c21cbc30f0a68!2sPap%C3%ADrensk%C3%A1%2C+160+00+Praha+6!5e0!3m2!1scs!2scz!4v1544535682005" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                    --><div class="half">
+                        <div>
+                            <h3 class="cBlue">SK BOXING</h3>
+                            <p class="space-l fs-s">SK BOXING PRAHA je dobrovolným sdružením občanů, provozující tělovýchovu a sport. Zabývají se tréninkem klasického boxu, thaiboxu, kondičního boxu a kickaerobicu.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://skboxing.cz/" class="is-highlighted" title="Dentální portál a e-shop">skboxing.cz</a></b><br>
+                                Adresa: <b class="strong">Mařákova, 160 00 Praha 6 - Dejvice</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1076.0754038906498!2d14.40209733946662!3d50.09839836180544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b95212838dcd3%3A0x63be2f7a57628be9!2zTWHFmcOha292YSwgMTYwIDAwIFByYWhhIDY!5e0!3m2!1scs!2scz!4v1544535625540" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen space-xxxl u-uppercase u-mw-m">Úklid vašich kanceláří nechte na náš úklidový personál. Je to snadné.</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná objednávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„objednat úklid“</a> <strong>jednoduše vyplníte nezávaznou</strong> poptávku úklidu kanceláře a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Při společném setkání nastavíme úklidový plán <strong>šitý na míru</strong> Vašim potřebám a vybereme zaměstnance úklidového personálu <strong>dle Vašich preferencí</strong>.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s">Ve stanovený čas prostory Vaší společnosti uklidí <strong>spolehlivý a odborně proškolený</strong> zaměstnanec našeho úklidového personálu.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">Díky naší <strong>garanci spokojenosti a kvality</strong> si užíváte příchod do čistě uklizených kanceláří a prostor společnosti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separateWhite">
+                <div class="content u-center">
+                    <h4 class="fs-xxl fNunito cGreen space-xxl u-uppercase u-mw-m">100% garance kvality a záruka vrácení peněz.</h4>
+                    <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'Footer', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu kanceláří na Praze 6">Chcete spolehlivý úklid?</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

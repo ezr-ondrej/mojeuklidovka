@@ -1,0 +1,74 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/blog-moje-uklidovka.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">
+                {% if model | length == 1 %}
+                    {{ model.name }}
+                    <div class="fs-s cYellow space-l">{% for i in 1..model.stars %}★{% endfor %}</div>
+                {% else %}
+                    Recenze úklidu
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+
+    <div class="bg-grayLight">
+        {% if model | length == 1 %}
+        <div class="blogPost">
+            <div class="blogPost_content">
+                {% if model.comment %}
+                <h2 class="fs-xl">
+                    <span class="underline-grayLight">Slovní komentář k hodnocení:</span>
+                </h2>
+                <p class="space-xl">{{ model.comment }}</p>
+                {% endif %}
+                {% if model.improvement %}
+                <h2 class="fs-xl">
+                    <span class="underline-grayLight">Náměty na zlepšení:</span>
+                </h2>
+                <p class="space-xl">{{ model.improvement }}</p>
+                {% endif %}
+                <h2 class="fs-xl">
+                    <span class="underline-grayLight">Zveřejnění hodnocení:</span>
+                </h2>
+                {% if model.public == 1 %}
+                    <p class="space-xl">Hodnocení je veřejné.</p>
+                {% else %}
+                    <p class="space-xl">Autor nesouhlasí se zveřejněním.</p>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+
+            {% for item in modelList %}
+            <div class="blogList">
+                <div class="blogList_content">
+                    <a href="{{ url() }}/space/review/{{ item.id }}">
+                        <h2 class="fs-xl">
+                            <span class="underline-grayLight">{{ item.name }}</span>
+                            <span class="cYellow">&nbsp;{% for i in 1..item.stars %}★{% endfor %}</span>
+                        </h2>
+                    </a>
+                    {% if item.comment | length >= 200 %}
+                        <p class="space-xl">{{ item.comment | striptags|slice(0, 200) }}&hellip;</p>
+                    {% else %}
+                        <p class="space-xl">{{ item.comment }}</p>
+                    {% endif %}
+                    <a class="btn btn-blue btn-s" href="{{ url() }}/space/review/{{ item.id }}" title="Přečíst">Přečíst</a>
+                </div>
+            </div>
+            {% endfor %}
+
+            {{ data.blogListLinks | raw }}
+
+        {% endif %}
+
+    </div>
+
+    {{ footer | raw }}
+
+</div>

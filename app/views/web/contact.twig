@@ -1,0 +1,160 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Jsme úklidová společnost,<br> kterou máte rádi.</h1>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="section">
+            <div class="content content-l">
+                <h2 class="fs-xxl fNunito cBlue space-xxl u-center">K úklidovým službám přistupuje jinak — <a href="{{ url_route('pageVision') }}" title="Vize naší úklidové společnosti"><strong>přátelsky a svědomitě</strong></a>.</h2>
+                <div class="content-s"><p class="space-xl">Nejsnadnější cesta k čisté kanceláři, domácnosti nebo bytovému domu je za pomoci odeslání <a onClick="ga('send', 'event', 'Clicks', 'heroText', 'web.contact');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu"><strong>nezávazné poptávky úklidu</strong></a>. Preferujete-li jinou formu komunikace, můžete nás kontaktovat pomocí níže uvedených údajů. Domluvte si osobní schůzku. Zeptejte se nás na cokoliv, rádi vám vyjdeme vstříc.</p></div>
+                <div class="u-center">
+                    <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'PreambleOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Chcete vypracovat cenovou nabídku? Klikněte pro nezávaznou poptávku našich úklidových služeb MojeÚklidovka.">Nezávazná poptávka úklidu</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="more" class="section section-l bg-grayLight">
+            <div class="content content-m">
+                <div class="row row-spaced">
+                    <div class="half">
+                        <div class="space-xxxl">
+                            <h3 class="fs-xl space-xl">Kontaktní údaje:</h3>
+                            <table class="is-styled">
+                                <tr>
+                                    <td>Telefon:</td>
+                                    <td class="strong"><a class="is-highlighted" href="tel:+420774510686" title="Zavolejte si Vaši úklidovku.">+420 774 510 686</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Email:</td>
+                                    <td class="strong">info@mojeuklidovka.cz</td>
+                                </tr>
+                                <tr>
+                                    <td>WWW:</td>
+                                    <td>www.mojeuklidovka.cz</td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <div>
+                            {% if data.success %}
+                                <div>
+                                    <h3 class="fs-xl fNunito cGreen space-xl">Vaše zpráva byla úspěšně odeslána. Děkujeme.</h3>
+                                </div>
+                            {% else %}
+
+                                <div>
+
+                                    <div class="space-xl">
+                                        <h3 class="fs-xl">Kontaktní formulář</h3>
+                                    </div>
+                                    {% if errors.any %}
+                                        {% for error in errors.all %}
+                                            <div class="cNegative">{{ error }}</div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <form action="{{ route('contactFormSubmit') }}" method="post" onsubmit="return submitUserForm()">
+                                        <table class="is-styled">
+                                            <tr>
+                                                <td class="u-ws-nw u-va-middle"><label for="email">Váš email:</label></td>
+                                                <td class="strong"><input type="text" name="email" id="email" value="{{ Input.old('email') }}" required="required"></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="u-ws-nw"><label for="message">Vaše zpráva:</label></td>
+                                                <td class="strong">
+                                                    <input autocomplete="off" tabindex="-1" type="text" name="description-title" value="" style="display:none !important">
+                                                    <textarea name="message" id="message" cols="50" rows="6" required="required">{{ Input.old('message') }}</textarea>
+                                                    <div class="g-recaptcha" data-sitekey="6Lekj4EUAAAAAMb7dfM_FytZruOGuUw9LMpE9vV9"></div>
+                                                    <div id="g-recaptcha-error">
+
+                                                    </div>
+                                                    <button class="btn btn-positive btn-s" onClick="ga('send', 'event', 'Clicks', 'contactFormSubmit', 'web.{{ data.currentRouteName }}');">Odeslat formulář</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
+                                </div>
+
+                            {% endif %}
+
+                            {% if data.success %}
+
+                                <!-- Google Code for Odeslání kontaktního formuláře - web Conversion Page -->
+                                <script type="text/javascript">
+                                    /* <![CDATA[ */
+                                    var google_conversion_id = 946422194;
+                                    var google_conversion_language = "en";
+                                    var google_conversion_format = "3";
+                                    var google_conversion_color = "ffffff";
+                                    var google_conversion_label = "9SmLCKnNy2wQsoOlwwM";
+                                    var google_remarketing_only = false;
+                                    /* ]]> */
+                                </script>
+                                <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+                                </script>
+                                <noscript>
+                                    <div style="display:inline;">
+                                        <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/946422194/?label=9SmLCKnNy2wQsoOlwwM&amp;guid=ON&amp;script=0"/>
+                                    </div>
+                                </noscript>
+
+                                <!-- Měřicí kód Sklik.cz -->
+                                <div style="display: none">
+                                    <iframe width="119" height="22" frameborder="0" scrolling="no" src="//c.imedia.cz/checkConversion?c=100026504&color=5e7cdb&v=0"></iframe>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div><!--
+                    --><div class="half">
+                        <h3 class="fs-xl space-xl">Provozovatel úklidové služby:</h3>
+                        <table class="is-styled">
+                            <tr>
+                                <td>HERADA s.r.o.</td>
+                                <td class="strong">Pod višňovkou 1661/33<br><strong>Krč</strong><br> 140 00 Praha 4</td>
+                            </tr>
+                            <tr>
+                                <td>IČO:</td>
+                                <td class="strong">04176871</td>
+                            </tr>
+                            <tr>
+                                <td>Spisová značka:</td>
+                                <td>C 243636 vedená u Městského soudu v Praze</td>
+                            </tr>
+                            <tr>
+                                <td class="u-ws-nw">Bankovní spojení:</td>
+                                <td>ČSOB č. ú. 270310930/0300</td>
+                            </tr>
+                            <tr>
+                                <td>IBAN:</td>
+                                <td>CZ77 0300 0000 0002 7031 0930</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="kariera" class="section section-m">
+            <div class="content content-shrinked u-center">
+                <div class="space-xl">
+                    <h2 class="cBlue space-xl">Rádi byste pro nás pracovali?</h2>
+                    <p>Tým naší úklidové společnosti MojeÚklidovka <strong>vždy rádi rozšíříme</strong> o nové zaměstnance s kladným vztahem k úklidu. <strong>Máte-li zájem</strong> pro nás pracovat a jste z Prahy, <strong>zašlete nám email</strong> s Vašimi kontaktními údaji a profesním životopisem na níže uvedenou adresu.</p>
+                </div>
+                <div class="u-center">
+                    <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'FooterWork', 'web.contact');" href="mailto:prace@mojeuklidovka.cz">prace@mojeuklidovka.cz</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

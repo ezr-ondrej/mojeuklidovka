@@ -1,0 +1,169 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/blog-moje-uklidovka.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 id="heroTitle" class="hero_title">
+                {% if model.id %}
+                    Upravit pozici
+                {% else %}
+                    Přidat pozici
+                {% endif %}
+            </h1>
+        </div>
+    </div>
+
+    <div class="bg-grayLight">
+        <div class="article">
+            <div class="article_content">
+
+                {% if result == 1 %}
+                    <div class="is-success space-l">
+                        <strong class="cWhite">Pozice byla upravena</strong>
+                    </div>
+                {% endif %}
+
+                <script type="text/javascript">
+
+                    function titleChanged(val) {
+
+                        var heroTitle = document.getElementById('heroTitle');
+                        heroTitle.innerHTML = val;
+                    }
+
+                    function validateForm() {
+
+                        var errors = 0;
+
+                        var label_title = document.getElementById('label_title');
+                        if (document.formCareer.title.value == '' || document.formCareer.title.value == null) {
+                            ++errors;
+                            label_title.style.color='#f95039';
+                        } else {
+                            label_title.style.color='#6e6e6e';
+                        }
+
+                        if (errors == 0) {
+                            document.formCareer.formSubmit.disabled=true;
+                            document.formCareer.formSubmit.value='{{ "template.registration_sending" | trans }}';
+                        } else {
+                            return false;
+                        }
+
+                    }
+                </script>
+
+                <form class="formStyle formStyle-onWhite" name="formCareer" action="/space/career{% if model.id %}/{{ model.id }}{% endif %}" method="post" onsubmit="return validateForm()" novalidate="novalidate">
+                    <div class="row">
+                        <label id="label_type" class="fNunito" for="type">Sekce:</label>
+                        <div class="formStyle_select space-xl">
+                            <select name="type" id="type">
+                                <option {% if model.type == 'offices' or not model.type %}selected{% endif %} value="offices">Kanceláře a komerční prostory</option>
+                                <option {% if model.type == 'home' %}selected{% endif %} value="home">Domácnosti</option>
+                                <option {% if model.type == 'flats' %}selected{% endif %} value="flats">Bytové domy</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_title" class="fNunito" for="title">Titulek:</label>
+                        <div class="formStyle_item space-xl">
+                            <input onKeyUp="titleChanged(this.value)" value="{{ model.title }}" name="title" type="text" id="title">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_description" class="fNunito" for="description">Popis pracovní pozice:</label>
+                        <div class="formStyle_item space-xl">
+                            <div class="formStyle_fake">
+                                <textarea class="editable" name="description" id="description" cols="30" rows="10">{{ model.description }}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        var editor = new MediumEditor('.editable', {
+                            toolbar: {
+                                /* These are the default options for the toolbar,
+                                 if nothing is passed this is what is used */
+                                allowMultiParagraphSelection: true,
+                                buttons: ['h2', 'h3',
+                                    {
+                                    name: 'p',
+                                    action: 'append-b',
+                                    aria: 'header type 1',
+                                    tagNames: ['p'],
+                                    contentDefault: '<p>p</p>',
+                                    classList: ['custom-class-h1'],
+                                    attrs: {
+                                        'data-custom-attr': 'attr-value-h1'
+                                    }
+                                }, 'bold', 'italic', 'underline', 'unorderedlist', 'orderedlist', 'anchor', 'quote', 'removeFormat'],
+                                diffLeft: 0,
+                                diffTop: -10,
+                                firstButtonClass: 'medium-editor-button-first',
+                                lastButtonClass: 'medium-editor-button-last',
+                                standardizeSelectionStart: false,
+                                static: false,
+                                relativeContainer: null
+                            },
+                            targetBlank: true,
+                            placeholder: {
+                                text: 'Krátký popis pracovní pozice'
+                            }
+                        });
+                    </script>
+
+                    <div class="row">
+                        <label id="label_address" class="fNunito" for="address">Místo úklidu:</label>
+                        <div class="formStyle_item space-xl">
+                            <input value="{{ model.address }}" name="address" type="text" id="address">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_what" class="fNunito" for="what">Typ úklidu:</label>
+                        <div class="formStyle_item space-xl">
+                            <input value="{{ model.what }}" name="what" type="text" id="what">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_when" class="fNunito" for="when">Pracovní doba:</label>
+                        <div class="formStyle_item space-xl">
+                            <input value="{{ model.when }}" name="when" type="text" id="when">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_repetitiveness" class="fNunito" for="repetitiveness">Pravidelnost úklidu:</label>
+                        <div class="formStyle_item space-xl">
+                            <input value="{{ model.repetitiveness }}" name="repetitiveness" type="text" id="repetitiveness">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label id="label_salary" class="fNunito" for="salary">Platební ohodnocení:</label>
+                        <div class="formStyle_item space-xl">
+                            <input value="{{ model.salary }}" name="salary" type="text" id="salary">
+                        </div>
+                    </div>
+
+                    <button name="formSubmit" type="submit" class="btn btn-block btn-positive">
+                        {% if model.id %}
+                            Upravit
+                        {% else %}
+                            Publikovat
+                        {% endif %}
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+        {{ footer | raw }}
+
+</div>

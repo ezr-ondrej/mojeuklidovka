@@ -1,0 +1,181 @@
+<div class="page">
+
+    {{ navigation | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/uklid-bytovych-domu.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklid bytů Praha</h1><br>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.pageFlat');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu">Nezávazná poptávka</a>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageFlat') }}" title="Úklid bytů">
+                    <span itemprop="name">Úklid bytů</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fM cBlue space-xxl u-mw-m u-center">Dopřejte si příjemný návrat do svého uklizeného bytu.</h2>
+                <p>Nabízíme Vám <strong>jednorázový</strong> nebo <strong>pravidelný úklid bytu</strong> v Praze. U našich klientů se nejčastěji setkáváme s požadavkem na <a href="{{ url_route('pageHome') }}" title="Pravidelný úklid domácnosti">pravidelný úklid domácnosti</a>, který probíhá většinou jednou nebo dvakrát do týdne. Někteří naši pravidelní zákazníci poptávají pro svůj byt vyšší frekvenci úklidu, například pro zimní období nebo v období svátků. MojeÚklidovka je flexibilní <a href="{{ url() }}/kontakt" title="Úklidová firma Praha">úklidová firma</a>, proto pokud to bude v našich silách, rádi Vám vyjdeme vstříc.</p>
+                <p>Cena za pravidelný úklid bytu je <span class="strong">150&nbsp;Kč za hodinu</span>. Celková částka za úklid se odvíjí od jeho trvání přímo ve Vaší domácnosti. Minimální doba trvání úklidu je stanovena na <span class="strong">3&nbsp;hodiny</span>, které jsou vždy potřeba k zaručení 100% čistoty. Rozsah úklidových služeb, o které budete mít v bytě zájem, stanovíme společně na osobní schůzce a sdělíme Vám přibližnou dobu trvání úklidu. Níže uvedený <a data-scroll href="#uklidBytu" title="Seznam úklidových služeb pro byty v Praze">seznam úklidových služeb</a> je pouze orientační. Vždy jsme pro Váš byt připraveni sestavit <strong>individuální úklidový plán,</strong> šitý na míru Vašim požadavkům.</p>
+                <p class="space-xl">Při úklidu ve Vaší domácnosti používáme vlastní úklidové pomůcky a profesionální čistící prostředky, které jsou šetrné k Vašemu majetku v bytě a nezatěžují životní prostředí.</p>
+
+                <h2 class="fs-l space-m">Úklid bytu:</h2>
+                <table class="is-styled space-xxl">
+                    <tr>
+                        <td>Lokalita:</td>
+                        <td><strong>Praha</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Místo:</td>
+                        <td>Rodinné domy nebo byty</td>
+                    </tr>
+                    <tr>
+                        <td>Cena úklidu:</td>
+                        <td>od 150 Kč za hodinu</td>
+                    </tr>
+                    <tr>
+                        <td>Související články:</td>
+                        <td>
+                            <ul class="is-styled">
+                                <li><a class="is-highlighted" onClick="ga('send', 'event', 'Clicks', 'linkBlogXmas', 'web.pageFlat');" href="{{ url() }}/blog/predvanocni-uklid" title="Předvánoční úklid">Předvánoční úklid</a></li>
+                                <li><a class="is-highlighted" onClick="ga('send', 'event', 'Clicks', 'linkBlogStress', 'web.pageFlat');" href="{{ url() }}/blog/uklidime-vas-stres" title="Uklidíme Váš stres">Uklidíme Váš stres</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Objednat úklid bytu v Praze" onClick="ga('send', 'event', 'Clicks', 'TextOrder', 'web.pageFlat');" href="{{ url_route('pageOrder') }}">{{ "web.order" | trans }} bytu</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="uklidBytu" class="section section-l bg-grayLight">
+            <div class="content content-m">
+                <h3 class="cGreen fs-xl">Úklid bytu:</h3>
+                <p class="space-xl">Základní balíček úklidových služeb pro Váš byt v Praze. <br>Zahrnuje úklidové práce, které si volí naši zákazníci nejčastějši.</p>
+                <div class="row row-spaced fs-s cBlack space-xxxl">
+                    <div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>vytírání bytových podlah</li>
+                            <li>utírání prachu</li>
+                            <li>mytí a leštění bytových dveří včetně zárubní</li>
+                            <li>odstraňování pavučin ze stěn a stropu bytu</li>
+                            <li>vysávání předložky přede dveřmi bytu</li>
+                            <li>mytí povrchů jídelních stolů a židlí</li>
+                            <li>desinfekce domácí kuchyňky</li>
+                            <li>očištění nečistot z odpadkových košů</li>
+                            <li>očištění bytových svítidel</li>
+                        </ul>
+                    </div><!--
+                    --><div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>vysávání koberců v bytě</li>
+                            <li>otírání pracovních ploch a židlí, parapetů, vypínačů a předmětů na stěnách</li>
+                            <li>leštění skleněných ploch a zrcadel</li>
+                            <li>vynesení odpadkového koše</li>
+                            <li>úklid kuchyňské linky</li>
+                            <li>odstranění vodního kamene z dřezu, vodovodní baterie</li>
+                            <li>očistění mastnoty na kuchyňské lince a jejím obkladu</li>
+                            <li>čištění nerezových ploch</li>
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="cGreen fs-xl">Volitelné úklidové služby pro byty:</h3>
+                <p class="space-xl">Na Vaše přání připravíme pro váš byt volitelný balíček podle Vašich představ a potřeb. <br>Volitelné úklidové služby lze libovolně kombinovat s položkami základního úklidového balíčku pro <a data-scroll href="#uklidBytu" title="Úklid bytů Praha">úklid bytu v Praze</a>.</p>
+                <div class="row row-spaced fs-s cBlack space-xxl">
+                    <div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>čištění mikrovlnky, varné desky, trouby, digestoře</li>
+                            <li>odvápnění varné konvice</li>
+                            <li>očištění vnitřních prostor lednice</li>
+                            <li>mytí obkladu v koupelně</li>
+                            <li>vysávání prachu z bytových radiátorů</li>
+                            <li>mytí radiátorů v bytě</li>
+                            <li>ošetření bytového nábytku</li>
+                            <li>ošetření podlahových ploch v bytě</li>
+                            <li>mytí vypínačů, zásuvek</li>
+                            <li>hloubkové čištění podlahy a spár</li>
+                            <li>zalévání květin v domácnosti</li>
+                            <li>úklid terasy či balkonu</li>
+                            <li>převlečení ložního prádla</li>
+
+                        </ul>
+                    </div><!--
+                    --><div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>odstranění vodního kamene z nerezových a skleněných ploch</li>
+                            <li>očištění vnitřních prostor kuchyňských skříněk</li>
+                            <li>mytí a desinfikování koupelnových předmětů (vana, sprchový kout, umyvadlo a toaleta)</li>
+                            <li>otírání prachu ze žaluzií</li>
+                            <li>praní a věšení záclon a závěsů</li>
+                            <li>mytí bytových oken včetně žaluzií a rámů</li>
+                            <li>mytí svítidel v domácnosti</li>
+                            <li>impregnace a voskování podlahových materiálů</li>
+                            <li>čištění sifonů a vodovodních odpadů</li>
+                            <li>čištění koberců</li>
+                            <li>žehlení košil</li>
+                            <li>žehlení</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fM cGreen space-xxxl u-uppercase u-mw-m">{{ "web.title_orderEasy_flat" | trans }}</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná objednávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.home');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„objednat úklid“</a> <strong>jednoduše vyplníte</strong> poptávku úklidových služeb a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Při společněm setkání sestavíme úklidový plán <strong>šitý na míru</strong> Vašim potřebám a vybereme pomocníka dle Vašich preferencí.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s"><strong>Spolehlivý a odborně proškolený</strong> úklidový pomocník Mojí Úklidovky pro Vás vše uklidí na dohodnutém místě a ve stanovený čas.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">S naší garancí <strong>spokojenosti a kvality</strong> si užíváte návrat do čistě uklizené kanceláře nebo domácnosti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separateWhite">
+                <div class="content u-center">
+                    <a class="btn btn-ghost" onClick="ga('send', 'event', 'Clicks', 'Footer', 'web.pageFlat');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu bytu">Nezávazná poptávka úklidu bytu</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_products | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

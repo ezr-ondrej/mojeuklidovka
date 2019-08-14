@@ -1,0 +1,95 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Otázky a odpovědi</h1>
+            <p class="hero_text">Přečtěte si co naše zákazníky zajímá, na co se nás ptají.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl cBlue space-m">Proč si pro úklid vybrat právě vás?</h2>
+                <p class="space-xxl">Jsme úklidová firma, která k úklidovým službám přistupuje jinak. Nejdůležitější je pro nás spokojenost lidí a to nejen ta Vaše ale i našich zaměstnanců. Máme spolehlivé zaměstnance, kteří mají svou práci rádi, a proto udělají vše co je v jejich silách pro zajištění kvality našich úklidových služeb. Tímto přístupem jsme si již získali srdce desítek spokojených zákazníků, kteří nás doporučují i svým přátelům. Máme radost, že se nám <a title="Naše vize úklidových služeb." onClick="ga('send', 'event', 'Clicks', 'TextOrder', 'web.qa');" href="{{ url_route('pageVision') }}">naše vize</a> naplňuje a budeme rádi, pokud se stanete našimi zákazníky i Vy.</p>
+
+                <h2 class="fs-xxl cBlue space-m">Jak si objednám úklidové služby?</h2>
+                <p class="space-xxl">Objednat naše úklidové služby je velice snadné. Přes objednávkový formulář vyplníte několik jednoduchých otázek a po kliknutí na tlačítko objednat bude Vaše nezávazná objednávka odeslána. Po zpracování objednávky Vás budeme kontaktovat pomocí emailu nebo telefonicky dle Vašich preferencí.</p>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Objednat úklidové služby" onClick="ga('send', 'event', 'Clicks', 'TextOrder', 'web.qa');" href="{{ url_route('pageOrder') }}">{{ "web.order" | trans }}</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section section-l bg-grayLight">
+            <div class="content content-s">
+                <h2 class="fs-xxl cGreen space-m">Kam si můžu objednat úklidové služby?</h2>
+                <p>Momentálně poskytujeme úklidové služby pouze pro Prahu a blízké okolí. Již v tomto roce však plánujeme rozšíření do dalších velkých měst v České republice.</p>
+                <div class="space-xxl">
+                    <blockquote class="cBlue">Náš úklid je nejoblíbenější u zákazníků z Prahy 2, 4 a 5.</blockquote>
+                </div>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Musím kupovat vlastní čisticí prostředky?</h2>
+                <p class="space-xxl">Výborná zpráva! Úklidové prostředky s námi kupovat nemusíte. Používáme pouze vlastní profesionální čisticí prostředky, u kterých víme, že splňují náročná kritéria a zároveň jsou šetrné k Vašemu majetku. Čisticí prostředky u Vás uskladníme a po celou dobu, kdy budete naším zákazníkem, je pro Vás budeme zadarmo doplňovat.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Jak probíhá první úklid?</h2>
+                <p class="space-xxl">Na první úklid přijde společně s úklidovým pracovníkem i další zástupce naší společnosti. Představí Vám úklidového pracovníka, zaznamená Vaše představy a požadavky na úklid nebo odpoví na případné dotazy. Zároveň sebou přinese i všechny potřebné dokumenty, potřebné k navázání dokonalé spolupráce.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Kdo u mě bude uklízet?</h2>
+                <p class="space-xxl">Všichni naši zaměstnanci jsou spolehliví a bezúhonní lidé s čistým trestním rejstříkem, který vyžadujeme od každého nového zaměstnance. Před prvním úklidem projde náš zaměstnanec osobním pohovorem a detailním proškolením pro zajištění Vaší stoprocentní spokojenosti. Zaměstnáváme české a slovenské občany se smyslem pro pořádek a čistotu úklidu. Pokud preferujete úklidového pracovníka se znalostí jiného jazyka, uděláme vše, co bude v našich silách, abychom Vám vyhověli.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Jakou můžu očekávat cenu za úklid?</h2>
+                <p class="space-xxl">Cena úklidových služeb se liší dle typu úklidu. Úklid domácností účtujeme od hodiny, sazba 150Kč/hodina je jednotná pro všechny frekvence úklidu (týdenní, čtrnáctidenní, generální úklid). Kanceláře, komerční prostory a bytové domu naceňujeme individuálně dle osobní prohlídky prostor a požadavků na úklid.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Jakým způsobem můžu za úklid zaplatit?</h2>
+                <p class="space-xxl">Platbu můžete uskutečnit pouze bezhotovostním převodem na základě vystavené faktury. U jednorázového úklidu fakturu vystavujeme přímo v den provedení úklidu. V případě pravidelného úklidu vždy na konci měsíce. Fakturu za naše úklidové služby je nutné uhradit do 15 dní od jejího vystavení.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Jak mi bude kompenzováno, když při úklidu dojde k nehodě?</h2>
+                <p class="space-xxl">Nic nás nebude mrzet více. Vždy se ale snažíme podobným situacím zabránit ať už proškolením našich pracovníků nebo dalšími bezpečnostními procesy. Naše společnost má sjednáno pojištění odpovědnosti za způsobenou škodu až do výše 1 000 000,- Kč. V případě nehody Vám finančně odškodníme způsobenou škodu a vynasnažíme se Vám opět vrátit úsměv na tváři.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Můžu si sám stanovit rozsah úklidových služeb?</h2>
+                <p class="space-xxl">Vyhovět přáním a požadavkům našeho zákazníka je pro nás na prvním místě, a proto s Vámi před prvním úklidem prodiskutujeme a následně individuálně zaznamenáme požadovaný rozsah úklidových služeb.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Musím být u úklidu přítomen/a?</h2>
+                <p class="space-xxl">Z našich zkušeností vyplývá, že zákazníci preferují úklidové služby v nepřítomnosti, proto potřebujeme mít k provedení úklidu k dispozici klíče od Vaší domácnosti, kanceláře nebo firmy. Můžete si být jisti, že zajištění ochrany Vašeho soukromí je pro nás prioritou. Předání klíčů je pak jednoduše vyřešeno formou předávacího protokolu, který obsahuje informaci o počtu předávaných klíčů a kontaktní údaje na úklidového pracovníka.</p>
+
+                <div class="separatorGray"></div>
+
+                <h2 class="fs-xxl cGreen space-m">Jakou můžu zvolit frekvenci u pravidelného úklidu?</h2>
+                <p>Frekvenci úklidu u kanceláří a komerčních prostor se snažíme přizpůsobit provozu pracoviště a Vašich požadavků na čistotu. U těchto prostor je frekvence úklidu individuální a nelze ji přesně stanovit.</p>
+                <p>Vaši domácnost navštíví náš úklidový pracovník minimálně jednou za 14 dní. Čtrnáctidenní frekvenci úklidu volí převážně zákazníci, kteří jsou často na cestách nebo tráví více času mimo svůj domov. U většiny domácností ale uklízíme jednou nebo dvakrát do týdne.</p>
+            </div>
+        </div>
+
+        <div class="section" style="padding: 1em 0">
+            <div class="content content-shrinked u-center">
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

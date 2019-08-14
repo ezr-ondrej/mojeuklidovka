@@ -1,0 +1,89 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" {% if newsPost | length == 1 and newsPost.image %}
+        style="background-image: url('{{ url() }}/files/blog/{{ newsPost.image }}.jpg?{{ appVersion }}')"
+    {% else %}
+        style="background-image: url('{{ url() }}/assets/web/img/uklizeny-stul-s-kvetinami.jpg?{{ appVersion }}')"
+            {% endif %}>
+
+        <div class="hero_content js-heroContent is-active">
+            {% if newsPost | length == 1 %}
+                <h1 class="hero_title">{{ newsPost.title }}</h1>
+            {% else %}
+                <h1 class="hero_title">Novinky</h1>
+                <p class="hero_text">Copak je u nás nového?</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="">
+
+
+        {% if newsPost or length == 1 %}
+            <div class="article">
+                <div class="article_content editable space-xxl">
+                    <p class="cBlue fNunito fs-xxl space-l">{{ newsPost.introduction }}</p>
+                    <div class="space-xxl">{{ newsPost.text | raw }}</div>
+                    {% if newsPost.website or newsPost.full_address %}
+                        <table class="is-styled">
+                            {% if newsPost.website %}
+                                <tr>
+                                    <td style="width: 200px">Webová stránka:</td>
+                                    <td><strong><a target="_blank" href="http://{{ newsPost.website }}" class="is-highlighted"
+                                                   title="{{ newsPost.title }}">{{ newsPost.website }}</strong></td>
+                                </tr>
+                            {% endif %}
+                            {% if newsPost.full_address %}
+                                <tr>
+                                    <td>Adresa:</td>
+                                    <td>{{ newsPost.full_address | replace({'\n': '<br>'}) | raw }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Mapa:</td>
+                                    <td>
+                                        <div class="map-responsive">
+                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1812.3167516914577!2d14.451486139187551!3d50.030040929975364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b93e6af7654fd%3A0x191a9ab4eaee8a46!2zUG9kIFZpxaHFiG92a291IDE2NjEvMzMsIDE0MCAwMCBQcmFoYSA0LUtyxI0!5e0!3m2!1scs!2scz!4v1544532107154"
+                                                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endif %}
+                        </table>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            {% if newsList or length >= 1 %}
+
+                {% for item in newsList %}
+                    <div class="article">
+                        <div class="article_content">
+                            <h2 class="fs-xl"><a onClick="ga('send', 'event', 'Clicks', 'news_title', 'web.{{ data.currentRouteName }}');"
+                                                 href="/novinky/{{ item.slug }}" title="{{ item.title }}"><span
+                                            class="underline-grayLight">{{ item.title }}</span></a></h2>
+                            <p class="space-l">{{ item.introduction }}</p>
+                            <a class="btn btn-blue btn-s" onClick="ga('send', 'event', 'Clicks', 'news_button', 'web.{{ data.currentRouteName }}');"
+                               href="/novinky/{{ item.slug }}" title="{{ item.title }}">Přečíst novinku</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+                {{ data.newsListLinks | raw }}
+
+            {% endif %}
+        {% endif %}
+
+
+        <div class="section" style="padding: 1em 0;">
+            <div class="content content-shrinked u-center">
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

@@ -1,0 +1,105 @@
+<IfModule mod_php5.c>
+    php_value max_execution_time 300
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^mojeuklidovka.cz [NC]
+    RewriteRule ^(.*)$ http://www.mojeuklidovka.cz/$1 [L,R=301,NC]
+
+    # Redirect Trailing Slashes...
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule headers_module>
+    #
+    # associate .js with "text/javascript" type (if not present in mime.conf)
+    #
+    AddType application/javascript .js
+
+    #
+    # configure mod_expires
+    #
+    # URL: http://httpd.apache.org/docs/2.2/mod/mod_expires.html
+    #
+
+    ExpiresActive on
+    ExpiresDefault                                      "access plus 1 seconds"
+
+    # CSS
+    ExpiresByType text/css                              "access plus 1 week"
+
+    # Data interchange
+    ExpiresByType application/json                      "access plus 0 seconds"
+    ExpiresByType application/xml                       "access plus 0 seconds"
+    ExpiresByType text/xml                              "access plus 0 seconds"
+
+    # Favicon (cannot be renamed!) and cursor images
+    ExpiresByType image/x-icon                          "access plus 1 week"
+
+    # HTML components (HTCs)
+    ExpiresByType text/x-component                      "access plus 1 month"
+
+    # HTML
+    ExpiresByType text/html                             "access plus 5 minutes"
+
+    # JavaScript
+    ExpiresByType application/javascript                "access plus 1 year"
+
+    # Manifest files
+    ExpiresByType application/x-web-app-manifest+json   "access plus 0 seconds"
+    ExpiresByType text/cache-manifest                   "access plus 0 seconds"
+
+    # Media
+    ExpiresByType audio/ogg                             "access plus 1 month"
+    ExpiresByType image/gif                             "access plus 1 month"
+    ExpiresByType image/jpeg                            "access plus 1 month"
+    ExpiresByType image/png                             "access plus 1 month"
+    ExpiresByType video/mp4                             "access plus 1 month"
+    ExpiresByType video/ogg                             "access plus 1 month"
+    ExpiresByType video/webm                            "access plus 1 month"
+
+    # Web feeds
+    ExpiresByType application/atom+xml                  "access plus 1 hour"
+    ExpiresByType application/rss+xml                   "access plus 1 hour"
+
+    # Web fonts
+    ExpiresByType application/x-font-woff "access plus 1 month"
+    ExpiresByType application/font-woff                 "access plus 1 month"
+    ExpiresByType application/vnd.ms-fontobject         "access plus 1 month"
+    ExpiresByType application/x-font-ttf                "access plus 1 month"
+    ExpiresByType font/opentype                         "access plus 1 month"
+    ExpiresByType image/svg+xml                         "access plus 1 month"
+
+    #
+    # configure mod_headers
+    #
+    # URL: http://httpd.apache.org/docs/2.2/mod/mod_headers.html
+    #
+
+#Header set Cache-Control "max-age=0, public"
+    Header unset ETag
+    Header unset Last-Modified
+    Header set Connection keep-alive
+
+</IfModule>
+
+<IfModule mod_deflate.c>
+	<IfModule mod_filter.c>
+		AddOutputFilterByType DEFLATE text/html text/plain text/xml
+		AddOutputFilterByType DEFLATE text/css
+		AddOutputFilterByType DEFLATE application/x-javascript application/javascript application/ecmascript
+		AddOutputFilterByType DEFLATE application/rss+xml
+		AddOutputFilterByType DEFLATE application/xml
+	</IfModule>
+
+</IfModule>

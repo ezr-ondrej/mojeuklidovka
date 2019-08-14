@@ -1,0 +1,144 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklid kanceláří - Praha 1</h1>
+            <p class="hero_text">od 1&nbsp;450,-&nbsp;Kč / měsíčně - týdenní úklid<br>
+                od 0,5 do 1,9 Kč/m² - denní úklid</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná objednávka úklidu">Nezávazně objednat</a>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">
+                    <span itemprop="name">Úklid kanceláří</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageOfficePrague1') }}" title="Úklid kanceláří - Praha 1">
+                    <span itemprop="name">Praha 1</span>
+                    <meta itemprop="position" content="4" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fNunito cBlue space-xxl u-mw-m u-center">Připojte se k našim spokojeným zákazníkům z Prahy 1.</h2>
+                <p class="space-xl">
+                    Využijte naše úklidové služby a přesvědčte se, že čisté kanceláře pomáhají k větší spokojenosti zaměstnanců a k prokazatelně lepším pracovním výkonům.
+                    Náš úklidový personál používá <strong>vlastní profesionální čistící prostředky</strong>, které jsou šetrné k povrchům Vašich kancelářských prostor a přitom zachovávají bezkonkurenční čistotu.
+                    Nabízíme <strong>pravidelný úklid kanceláří</strong>, <strong>komerčních</strong> nebo <strong>jiných prostor</strong> pro městské části Staré Město, Josefov, Hradčany, Malou Stranu, Nové Město, Holešovice a Vinohrady. Naši klienti pro své kanceláře nejčastěji využívají pravidelnou formu úklidu s denní frekvencí.
+                </p>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Více o úklidu kanceláří" onClick="ga('send', 'event', 'Clicks', 'TextOffices', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOffice') }}">Více o úklidu kanceláří</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="uklidKancelari" class="section section-l bg-grayLight">
+            <div class="content content-s">
+                <div class="u-center">
+                    <h2 class="fs-xxl cGreen">Zákazníci, kteří se na nás spoléhají:</h2>
+                    <p class="space-xxl">Níže Vám představujeme několik vybranných společností, které si pro své kanceláře vybrali naše úklidové služby.</p>
+                </div>
+
+                <div class="row row-spaced cBlack space-xxxl">
+                    <div class="half">
+                        <div class="space-xxl">
+                            <h3 class="cBlue">Leo Macenauer</h3>
+                            <p class="space-l fs-s">Tradiční krejčovské řemeslo nejvyšší úrovně. Kvalita, tradice, řemeslo a design - to jsou hlavní zásady a hodnoty, které vyznává pánský krejčí stojící za stejnojmennou značkou Leo Macenauer.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://leomacenauer.com/" class="is-highlighted" title="Tradiční krejčovské řemeslo - Leo Macenauer">leomacenauer.com</a></b><br>
+                                Adresa: <b class="strong">Soukenická, 110 00 Praha 1 - Nové Město</b><br><br>
+                                    <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.9357312456698!2d14.429372513116109!3d50.091099825675236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94c03b06a2af%3A0xec4b796b9ce59ea4!2sSoukenick%C3%A1%2C+110+00+Praha+1!5e0!3m2!1scs!2scz!4v1544533675832"
+                                    width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="cBlue">Billigence</h3>
+                            <p class="space-l fs-s">Společnost dodávající jedinečná řešení v oblasti Business Inteligence a CRM. Umožňuje firmám plně využít jejich potenciál v dnešní „datově-revoluční“ době.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://www.billigence.com/cs/" class="is-highlighted" title="Business Inteligence a CRM - Billigence">billigence.com/cs/</a></b><br>
+                                Adresa: <b class="strong">Krakovská, 110 00 Praha 1 - Nové Město</b><br><br>
+                                <div class="map-responsive">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d761.207368619379!2d14.427784201878247!3d50.079055977372775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b948d132e6e5d%3A0xb5484809624629eb!2zS3Jha292c2vDoSwgMTEwIDAwIE5vdsOpIE3Em3N0bw!5e0!3m2!1scs!2scz!4v1544534766630" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                    --><div class="half">
+                        <div>
+                            <h3 class="cBlue">Ely Management</h3>
+                            <p class="space-l fs-s">Modelingová agentura se sídlem v Praze, objevující nové tváře zítřka. Díky svým bohatým zkušenostem s módním prostředí, poskytují svým klientům expertní zázemí pro rozvoj jejich talentu a šanci na úspěšnou kariéru.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://elymanagement.cz/" class="is-highlighted" title="Modelingová agentura - Ely Management">elymanagement.cz</a></b><br>
+                                Adresa: <b class="strong">Opletalova, 110 00 Praha 1 - Nové Město</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1076.4064404950943!2d14.431778577334224!3d50.08365824146573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b949376391a6b%3A0x373e75b4308b033!2sOpletalova%2C+110+00+Nov%C3%A9+M%C4%9Bsto!5e0!3m2!1scs!2scz!4v1544534676770" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen space-xxxl u-uppercase u-mw-m">Úklid vašich kanceláří nechte na náš úklidový personál. Je to snadné.</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná objednávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„objednat úklid“</a> <strong>jednoduše vyplníte nezávaznou</strong> poptávku úklidu kanceláře a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Při společném setkání nastavíme úklidový plán <strong>šitý na míru</strong> Vašim potřebám a vybereme zaměstnance úklidového personálu <strong>dle Vašich preferencí</strong>.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s">Ve stanovený čas prostory Vaší společnosti uklidí <strong>spolehlivý a odborně proškolený</strong> zaměstnanec našeho úklidového personálu.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">Díky naší <strong>garanci spokojenosti a kvality</strong> si užíváte příchod do čistě uklizených kanceláří a prostor společnosti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separateWhite">
+                <div class="content u-center">
+                    <h4 class="fs-xxl fNunito cGreen space-xxl u-uppercase u-mw-m">100% garance kvality a záruka vrácení peněz.</h4>
+                    <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'Footer', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu kanceláří na Praze 1">Chcete spolehlivý úklid?</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

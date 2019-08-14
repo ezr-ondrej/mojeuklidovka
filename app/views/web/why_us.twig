@@ -1,0 +1,113 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Proč úklid od nás?</h1>
+            <p class="hero_text">Přečtěte si 6 důvodů, proč si vybrat naše úklidové služby.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="section section-m">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon ">
+                        <svg class="icon-quality-filled" viewBox="0 0 50 50"><use xlink:href="#icon-quality-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">1. Vlastní úklidový personál</h2>
+                        <p>Žádný zprostředkovaný úklid. Naopak! Lidé z našeho úklidového personálu jsou zaměstnanci MojíÚklidovky. S námi získáváte úklidového profesionála, za kterého Vám 100% ručíme.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m bg-grayLight">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-star" viewBox="0 0 512 512"><use xlink:href="#icon-star"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">2. S námi s jistotou</h2>
+                        <p>Naši zaměstnanci jsou důkladně prověřeni díky každodenní spolupráci. Zajistíme Vám tak stálého pomocníka, který Vás nezklame a u kterého můžeme garantovat nejen jeho spolehlivost ale také kvalitu provedení úklidu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon ">
+                        <svg class="icon-school" viewBox="0 0 512 512"><use xlink:href="#icon-school"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">3. Proškolený personál</h2>
+                        <p>Profesionální úklidová kvalifikace je u nás samozřejmostí. Naše zaměstnance sami vzděláváme ohledně dodržování moderních standardů a přístupů k úklidu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m bg-grayLight">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-shield" viewBox="0 0 512 512"><use xlink:href="#icon-shield"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">4. Bezpečnost zaručena</h2>
+                        <p>S námi je Váš majetek vždy v bezpečí. Naše společnost má sjednáno pojištění odpovědnosti za způsobenou škodu až do výše 1.000.000,- Kč.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon ">
+                        <svg class="icon-clean-filled" viewBox="0 0 50 50"><use xlink:href="#icon-clean-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">5. Čistící prostředky zdarma</h2>
+                        <p>Pro naše úklidové služby využíváme vždy vlastní čisticí prostředky, které zaručují vysokou účinnost a zároveň nezatěžují životní prostředí. Navíc neplatíte nic navíc. Tyto profesionální čisticí prostředky jsou již zahrnuty v ceně úklidu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m bg-grayLight">
+            <div class="content content-s">
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-heart-filled" viewBox="0 0 50 50"><use xlink:href="#icon-heart-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h2 class="fs-xxl cBlue space-m">6. Budeme si Vás hýčkat</h2>
+                        <p>Abychom Vám mohli nabídnout bezkonkurenční úklidové služby, navštíví Vás při prvním úklidu nejen náš úklidový personál ale také zástupce vedení MojíÚklidovky. Společně si tak jednoduše nastavíte úklid podle Vašich snů a představ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen u-uppercase space-xxxl u-mw-m">{{ "web.title_100" | trans }}</h2>
+            </div>
+
+            <div class="section-separateWhite u-center">
+                <a class="btn btn-ghost" title="Nezávazně objednat úklid v Praze" onClick="ga('send', 'event', 'Clicks', 'FooterOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}">Nezávazně objednat úklid</a>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

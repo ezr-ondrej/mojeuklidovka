@@ -1,0 +1,189 @@
+<div class="page">
+
+    {{ navigation | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/uklid-objednavka.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Objednávka úklidu</h1>
+            <p class="hero_text">Dopřejte si bez námahy radost z čistého okolí.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="section">
+            <div class="content content-s u-center">
+                <h2 class="fs-xxl fM cBlue space-xl">Velice rádi Vám pomůžeme s úklidem kanceláří, domácností, domů nebo firem.</h2>
+                <p class="">Objednat naše úklidové služby pro Prahu je velice jednoduché. Stačí na této stránce vyplnit <strong>nezávaznou&nbsp;objednávku&nbsp;úklidu</strong> a my Vás budeme kontaktovat, co nejdříve to bude možné. Pokud preferujete telefonní kontakt, můžete úklid sjednat na čísle <a href="tel:+420774510686" title="Zavolejte si MojiÚklidovku."><strong class="fNunito">+420 774 510 686</strong></a>.</p>
+            </div>
+        </div>
+
+        <form action="{{ route('orderSubmit') }}" method="post" onsubmit="return submitUserForm()">
+
+            <div class="section section-l bg-grayLight formStyle">
+                <div class="content content-s space-xl">
+                    {% if data.success %}
+                        <div class="u-center" style="height: 500px;">
+                            <h3 class="fs-xl fM cGreen space-xl">Vaše objednávka byla úspěšně odeslána. Děkujeme.</h3>
+                        </div>
+                    {% else %}
+                        {% if errors.any %}
+                            {% for error in errors.all %}
+                                <div class="u-center">
+                                    <p class="fs-xxl cNegative">{{ error }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="formOrder space-xl">
+                            <div class="space-xxl u-center">
+                                <h3 class="fs-xl fM cGreen space-xl">Vyberte typ úklidu</h3>
+                                <div class="formOrder_item">
+                                    <input  type="radio" name="type" id="type-home" value="Domácnost" class="hidden" {% if not Input.old('type') %}checked{% endif %} {% if Input.old('type') == 'Domácnost' %}checked{% endif %}>
+                                    <label for="type-home" class="formOrder_box">
+                                        <svg class="icon icon-home" viewBox="0 0 50 50"><use xlink:href="#icon-home"></use></svg>
+                                        <br>
+                                        Domácnost
+                                    </label>
+                                    <span class="fs-xs fNunito cGray">od 150 Kč za hodinu</span><br>
+                                    <a target="_blank" class="formOrder_more" href="{{ url_route('pageHome') }}" title="Detail našich úklidových služeb pro domácnosti.">Více o úklidu domácností.</a>
+                                </div>
+                                <div class="formOrder_item">
+                                    <input type="radio" name="type" id="type-flat" value="Bytový dům" class="hidden" {% if Input.old('type') == 'Bytový dům' %}checked{% endif %}>
+                                    <label for="type-flat" class="formOrder_box">
+                                        <svg class="icon icon-flats" viewBox="0 0 50 50"><use xlink:href="#icon-flats"></use></svg>
+                                        <br>
+                                        Bytový dům
+                                    </label>
+                                    <span class="fs-xs fNunito cGray">od 80 do 140 Kč měsíčně</span><br>
+                                    <a target="_blank" class="formOrder_more" href="{{ url_route('pageFloor') }}" title="Detail našich úklidových služeb pro bytové domy.">Více o úklidu bytových domů.</a>
+                                </div>
+                                <div class="formOrder_item">
+                                    <input type="radio" name="type" id="type-company" value="Komerční prostor" class="hidden" {% if Input.old('type') == 'Komerční prostor' %}checked{% endif %}>
+                                    <label for="type-company" class="formOrder_box">
+                                        <svg class="icon icon-company" viewBox="0 0 50 50"><use xlink:href="#icon-company"></use></svg>
+                                        <br>
+                                        Kancelář
+                                    </label>
+                                    <span class="fs-xs fNunito cGray">od 0,5 do 1,9 Kč/m²</span><br>
+                                    <a target="_blank" class="formOrder_more" href="{{ url_route('pageOffice') }}" title="Detail našich úklidových služeb pro komerční prostory.">Více o úklidu komerčních prostor.</a>
+                                </div>
+                            </div>
+                            <div class="space-xxl u-center">
+                                <h3 class="fs-xl fM cGreen space-xl">Frekvence úklidu</h3>
+                                <input type="radio" name="frequency" id="once" value="Pravidelně" class="hidden" checked>
+                                <label for="once" class="formOrder_box formOrder_box-line" title="Chcete-li objednat pravidelný úklid, vyberte tuto možnost.">
+                                    Pravidelný úklid
+                                </label>
+						
+                                <span class="formOrder_more" style="position:relative; top: -2em;">Zajišťujeme pouze pravidelné úklidy.</span>
+                            </div>
+                            <div class="space-xl u-center">
+                                <h3 class="fs-xl fM cGreen">Kontaktní údaje</h3>
+                            </div>
+                            <div class="space-xl clearfix">
+                                <div class="row row-spaced space-xxl">
+                                    <div class="half">
+                                        <label for="firstname" class="fNunito cGray">
+                                            Jméno:
+                                        </label>
+                                        <input type="text" name="firstname" id="firstname" value="{{ Input.old('firstname') }}" required="required">
+                                    </div><!--
+                                --><div class="half">
+                                        <label for="lastname" class="fNunito cGray">
+                                            Příjmení:
+                                        </label>
+                                        <input type="text" name="lastname" id="lastname" value="{{ Input.old('lastname') }}" required="required">
+                                    </div>
+                                </div>
+                                <div class="row row-spaced space-xxl">
+                                    <div class="half">
+                                        <label for="email" class="fNunito cGray">
+                                            Email:
+                                        </label>
+                                        <input type="text" name="email" id="email" value="{{ Input.old('email') }}" required="required">
+                                    </div><!--
+                                --><div class="half">
+                                        <label for="phone" class="fNunito cGray">
+                                            Telefon:
+                                        </label>
+                                        <input type="text" name="phone" id="phone" value="{{ Input.old('phone') }}" required="required">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="space-xl u-center">
+                                <h3 class="fs-xl fM cGreen">Kontaktujte mne prosím na:</h3>
+                            </div>
+                            <div class="u-center space-xxl">
+                                <input type="radio" name="contactType" id="contactEmail" value="email" class="hidden" {% if Input.old('contactType') == 'email' %}checked{% endif %}>
+                                <label for="contactEmail" class="formOrder_box formOrder_box-line" title="Budeme Vás kontaktovat pomocí emailu.">
+                                    Email
+                                </label>
+                                <input type="radio" name="contactType" id="contactPhone" value="telefon" class="hidden" {% if not Input.old('contactType') %}checked{% endif %} {% if Input.old('contactType') == 'telefon' %}checked{% endif %}>
+                                <label for="contactPhone" class="formOrder_box formOrder_box-line" title="Budeme Vás kontaktovat pomocí telefonu.">
+                                    Telefon
+                                </label>
+                            </div>-->
+                            <div class="u-center">
+                                <h3 class="fs-xl fM cGreen">Podrobnosti o úklidu <small class="cGrayLighter">(nepovinné)</small></h3>
+                                <p class="space-xl">Vaši <strong>nezávaznou objednávku</strong> můžeme vyřídit rychleji, pokud nám napíšete více podrobností o místě úklidu, Vašich představách a požadavcích. Děkujeme.</p>
+                            </div>
+                            <div>
+                                <input autocomplete="off" tabindex="-1" type="text" name="description-title" value="" style="display:none !important">
+                                <textarea name="description" id="" cols="60" rows="10">{{ Input.old('description') }}</textarea>
+                            </div>
+                        </div>
+                        <div class="g-recaptcha" data-sitekey="6Lekj4EUAAAAAMb7dfM_FytZruOGuUw9LMpE9vV9"></div>
+                        <div id="g-recaptcha-error">
+
+                        </div>
+                        <div class="u-center">
+                            <button class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'FooterOrderSubmit', 'web.order');" title="Tlačítko pro dokončení Vaší objednávky úklidu.">Nezávazně objednat</button>
+                        </div>
+
+                    {% endif %}
+                </div>
+
+                {% if data.success %}
+
+                    <!-- Google Code for Objednávka úklidu - web Conversion Page -->
+                    <script type="text/javascript">
+                        /* <![CDATA[ */
+                        var google_conversion_id = 946422194;
+                        var google_conversion_language = "en";
+                        var google_conversion_format = "3";
+                        var google_conversion_color = "ffffff";
+                        var google_conversion_label = "Hfn2CNDi1GYQsoOlwwM";
+                        var google_remarketing_only = false;
+                        /* ]]> */
+                    </script>
+                    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+                    </script>
+                    <noscript>
+                        <div style="display:inline;">
+                            <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/946422194/?label=Hfn2CNDi1GYQsoOlwwM&amp;guid=ON&amp;script=0"/>
+                        </div>
+                    </noscript>
+
+                    <!-- Měřicí kód Sklik.cz -->
+                    <div style="display: none">
+                        <iframe width="119" height="22" frameborder="0" scrolling="no" src="//c.imedia.cz/checkConversion?c=100018583&color=ffffff&v="></iframe>
+                    </div>
+                {% endif %}
+
+            </div>
+
+        </form>
+
+        <div class="section" style="padding: 1em 0">
+            <div class="content content-shrinked u-center">
+            </div>
+        </div>
+
+        {{ footer_products | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>                                                    

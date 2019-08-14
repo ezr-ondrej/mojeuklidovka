@@ -1,0 +1,179 @@
+<div class="page">
+
+    {{ navigation | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/uklid-kancelari.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklid kanceláří</h1>
+            <p class="hero_text fNunito fs-xxl">od 0,5 do 1,9 Kč/m² za jeden úklid</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.pageOffice');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu">Nezávazná poptávka</a>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">
+                    <span itemprop="name">Úklid kanceláří</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fM cBlue space-xxl u-mw-m u-center">Čisté kanceláře pomáhájí k větší spokojenosti Vašich zaměstnanců a zvyšují jejich pracovní výkon.</h2>
+                <p>Pro firmy v Praze a blízkém okolí nabízíme <strong>pravidelný úklid</strong> kanceláří, firemních nebo jiných prostor. Naši klienti pro své kanceláře nejčastěji využívají pravidelnou formu úklidu s denní frekvencí. Denní úklidové služby v kancelářích jsou vhodné zejména u firem s větším počtem zaměstnanců. Denní <strong>úklid komerčních prostor</strong> doporučujeme ve firmách, které každý den navštěvuje větší množství zákazníků nebo obchodních partnerů. Pro malé a střední firmy nabízíme možnost pravidelného úklidu několikrát do týdne.</p>
+                <p>Cena za pravidelný úklid se pohybuje v rozmezí <span class="strong">od 0,5 do 1,9 Kč/m²</span> za jeden úklid. Platí, že čím větší je úklidová plocha kanceláří a prostor firmy, tím je nižší cena. Na osobní schůzce nejprve společně stanovíme dobu úklidu, aby vyhovovala pracovnímu režimu Vaší firmy. Pravidelný úklid Vašich firemních prostor nebo kanceláří tak nenaruší plynulý chod Vaší firmy a <a class="is-highlighted" onClick="ga('send', 'event', 'Clicks', 'textBlogStress', 'web.pageOffice');" href="{{ url() }}/blog/uklidime-vas-stres" title="Snížení stredu v práci">naopak její efektivitu ještě posílí</a>. Následně z níže uvedeného <a data-scroll href="#uklidKancelari" title="Seznam úklidových služeb pro kanceláře v Praze">seznamu úklidových služeb</a> pro Vás sestavíme individuální plán, šitý na míru Vašemu pracovišti. Seznam úklidových prací je pouze orientační a <strong>rádi vyhovíme i specifickým požadavkům na firemní úklid</strong>.</p>
+                <p class="space-xl">K úklidu používáme vlastní <strong>profesionální čistící prostředky</strong>, které jsou šetrné k povrchům Vašich firemních prostor a přitom zachovávají bezkonkurenční čistotu.</p>
+
+                <h2 class="fs-l space-m">Úklid firemních prostor a kanceláří:</h2>
+                <table class="is-styled space-xxl">
+                    <tr>
+                        <td>Lokalita:</td>
+                        <td><strong>Praha a blízké okolí</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Místo:</td>
+                        <td>Firmy a firemní prodejny, sportovní a kulturní zařízení,…</td>
+                    </tr>
+                    <tr>
+                        <td>Cena úklidu:</td>
+                        <td>od 0,5 do 1,9 Kč/m² za jeden úklid</td>
+                    </tr>
+                    <tr>
+                        <td>Související články:</td>
+                        <td>
+                            <ul class="is-styled">
+                                <li><a class="is-highlighted" onClick="ga('send', 'event', 'Clicks', 'linkBlogStress', 'web.pageOffice');" href="{{ url() }}/blog/uklidime-vas-stres" title="Uklidíme Váš stres">Uklidíme Váš stres</a></li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Objednat úklid kanceláří" onClick="ga('send', 'event', 'Clicks', 'TextOrder', 'web.pageOffice');" href="{{ url() }}/objednat-uklid">{{ "web.order" | trans }}</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="uklidKancelari" class="section section-l bg-grayLight">
+            <div class="content content-m">
+                <h3 class="cGreen fs-xl">Úklid kanceláří:</h3>
+                <p class="space-xl">Tento základní balíček pro úklid kanceláří a komerčních prostor zahrnuje nejčastější úklidové práce, které mají naši firemní zákazníci v oblibě. Rozjasněte své komerční prostory a <a onClick="ga('send', 'event', 'Clicks', 'TextOrder', 'web.pageOffice');" class="navigation_link" href="{{ url() }}/objednat-uklid" title="Objednávka úklidu">objednejte si úklid</a> také pro Vaši firmu.</p>
+                <div class="row row-spaced fs-s cBlack space-xxxl">
+                    <div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>vytírání podlah smluvených úklidových prostor</li>
+                            <li>utírání prachu v kanceláři</li>
+                            <li>mytí a leštění dveří včetně zárubní</li>
+                            <li>odstraňování pavučin ze stěn a stropu</li>
+                            <li>mytí povrchů jídelních stolů a židlí</li>
+                            <li>desinfekce firemní kuchyňky</li>
+                            <li>očištění nečistot z odpadkových košů</li>
+                            <li>očištění svítidel</li>
+                            <li>mytí a desinfekce toalety</li>
+                            <li>odnesení veškerého nádobí do kuchyňky</li>
+                            <li>péče o monitory v kanceláři</li>
+                        </ul>
+                    </div><!--
+                    --><div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>vysávání koberců</li>
+                            <li>otírání pracovních ploch a židlí, parapetů, vypínačů a předmětů na stěnách</li>
+                            <li>leštění skleněných ploch a zrcadel</li>
+                            <li>vynesení odpadkových košů</li>
+                            <li>úklid kuchyňské linky</li>
+                            <li>odstranění vodního kamene z  dřezu, vodovodní baterie</li>
+                            <li>očistění mastnoty na kuchyňské lince a jejím obkladu</li>
+                            <li>čištění nerezových ploch</li>
+                            <li>doplnění toaletního papíru, jednorázových ručníků a mýdla</li
+                        </ul>
+                    </div>
+                </div>
+                <h3 class="cGreen fs-xl">Volitelné úklidové služby pro kanceláře:</h3>
+                <p class="space-xl">Na Vaše přání pro Vás Moje úklidovka připraví volitelný balíček podle Vašich představ a potřeb. Možnosti úklidu lze libovolně kombinovat s položkami základního balíčku <a data-scroll href="#uklidKancelari" title="Úklid kanceláří Praha">úklidu kanceláří</a>.</p>
+                <div class="row row-spaced fs-s cBlack space-xxl">
+                    <div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>čištění mikrovlnky, varné desky, trouby, digestoře</li>
+                            <li>očištění vnitřních prostor kuchyňských skříněk</li>
+                            <li>mytí a desinfikování koupelnových předmětů (vana, sprchový kout, umyvadlo a toaleta)</li>
+                            <li>vysávání prachu z radiátorů</li>
+                            <li>mytí radiátorů</li>
+                            <li>ošetření nábytku</li>
+                            <li>mytí svítidel</li>
+                            <li>impregnace a voskování podlahových materiálů</li>
+                            <li>čištění sifonů, vodovodních odpadů</li>
+                            <li>čištění koberců</li>
+                            <li>žehlení košil</li>
+                        </ul>
+                    </div><!--
+                    --><div class="half half-sticked">
+                        <ul class="is-styled">
+                            <li>odvápnění varné konvice</li>
+                            <li>očištění vnitřních prostor lednice</li>
+                            <li>otírání prachu ze žaluzií</li>
+                            <li>praní a věšení záclon a závěsů</li>
+                            <li>mytí oken včetně žaluzií a rámů</li>
+                            <li>ošetření podlahových ploch</li>
+                            <li>mytí vypínačů, zásuvek</li>
+                            <li>hloubkové čištění podlahy a spár</li>
+                            <li>zalévání květin</li>
+                            <li>úklid terasy či balkonu</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fM cGreen space-xxxl u-uppercase u-mw-m">{{ "web.title_orderEasy_office" | trans }}</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná objednávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.home');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„objednat úklid“</a> <strong>jednoduše vyplníte</strong> poptávku úklidových služeb a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Při společněm setkání sestavíme úklidový plán <strong>šitý na míru</strong> Vašim potřebám a vybereme pomocníka dle Vašich preferencí.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s"><strong>Spolehlivý a odborně proškolený</strong> úklidový pomocník Mojí Úklidovky pro Vás vše uklidí na dohodnutém místě a ve stanovený čas.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">S naší garancí <strong>spokojenosti a kvality</strong> si užíváte návrat do čistě uklizené kanceláře nebo domácnosti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separateWhite">
+                <div class="content u-center">
+                    <a class="btn btn-ghost" onClick="ga('send', 'event', 'Clicks', 'Footer', 'web.pageOffice');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu kanceláří">Nezávazná poptávka úklidu kanceláří</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_products | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

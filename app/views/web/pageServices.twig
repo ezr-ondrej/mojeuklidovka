@@ -1,0 +1,97 @@
+<div class="page">
+
+    {{ navigation | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklidové služby</h1>
+            <p class="hero_text">100% garance kvality služeb a záruka vrácení peněz.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-grayLight u-bt-0">
+            <div class="content content-s">
+                <div class="section section-m bg-grayLight u-bt-0">
+                    <div class="content content-s">
+                        <a href="{{ url_route('pageHome') }}" title="Úklid domácností">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-home" viewBox="0 0 50 50"><use xlink:href="#icon-home"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Úklid domácností</h2>
+                                    <p>Volný čas věnujte tomu, co Vás baví. Naši úklidoví pomocníci se mezitím postarají o úklid Vaší domácnosti.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="section section-m bg-grayLight">
+                    <div class="content content-s">
+                        <a href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-company" viewBox="0 0 50 50"><use xlink:href="#icon-company"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Úklid kanceláří</h2>
+                                    <p>Čisté kanceláře pomáhájí k větší spokojenosti zaměstnanců a k prokazatelně lepším pracovním výkonům.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section section-m bg-grayLight">
+                    <div class="content content-s space-xxxl">
+                        <a href="{{ url_route('pageFlats') }}" title="Úklid bytových domů">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-flats" viewBox="0 0 50 50"><use xlink:href="#icon-flats"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Úklid bytových domů</h2>
+                                    <p>Ušetřete svým nájemníkům starosti s úklidem společných prostor. Dopřejte jim příjemný návratu domů.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fM cGreen u-uppercase space-xxxl u-mw-m">{{ "web.title_100" | trans }}</h2>
+            </div>
+
+            <div class="section-separateWhite u-center">
+                <a class="btn btn-ghost" title="Nezávazně objednat úklid v Praze" onClick="ga('send', 'event', 'Clicks', 'FooterOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}">Nezávazně objednat úklid</a>
+            </div>
+        </div>
+
+        {{ footer_products | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

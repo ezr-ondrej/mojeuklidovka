@@ -1,0 +1,132 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Úklid kanceláří - Praha 2</h1>
+            <p class="hero_text">od 1&nbsp;450,-&nbsp;Kč / měsíčně - týdenní úklid<br>
+                od 0,5 do 1,9 Kč/m² - denní úklid</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná objednávka úklidu">Nezávazně objednat</a>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageServices') }}" title="Úklidové služby">
+                    <span itemprop="name">Úklidové služby</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">
+                    <span itemprop="name">Úklid kanceláří</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageOfficePrague2') }}" title="Úklid kanceláří - Praha 2">
+                    <span itemprop="name">Praha 2</span>
+                    <meta itemprop="position" content="4" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fNunito cBlue space-xxl u-mw-m u-center">Připojte se k našim spokojeným zákazníkům z Prahy 2.</h2>
+                <p class="space-xl">
+                    Využijte naše úklidové služby a přesvědčte se, že čisté kanceláře pomáhají k větší spokojenosti zaměstnanců a k prokazatelně lepším pracovním výkonům.
+                    Náš úklidový personál používá <strong>vlastní profesionální čistící prostředky</strong>, které jsou šetrné k povrchům Vašich kancelářských prostor a přitom zachovávají bezkonkurenční čistotu.
+                    Nabízíme <strong>pravidelný úklid kanceláří</strong>, <strong>komerčních</strong> nebo <strong>jiných prostor</strong> pro městské části Vinohrady, Nové město, Vyšehrad a Nusle. Naši klienti pro své kanceláře nejčastěji využívají pravidelnou formu úklidu s denní frekvencí.
+                </p>
+
+                <div class="u-center">
+                    <a class="btn btn-blue" title="Více o úklidu kanceláří" onClick="ga('send', 'event', 'Clicks', 'TextOffices', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOffice') }}">Více o úklidu kanceláří</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="uklidKancelari" class="section section-l bg-grayLight">
+            <div class="content content-s">
+                <div class="u-center">
+                    <h2 class="fs-xxl cGreen">Zákazníci, kteří se na nás spoléhají:</h2>
+                    <p class="space-xxl">Níže Vám představujeme několik vybranných společností, které si pro své kanceláře vybrali naše úklidové služby.</p>
+                </div>
+
+                <div class="row row-spaced cBlack space-xxxl">
+                    <div class="half">
+                        <div>
+                            <h3 class="cBlue">Awesome Developers</h3>
+                            <p class="space-l fs-s">Vývojářská společnost, která objevuje, navrhuje a implementuje systémová řešení ve světě webových služeb a cloudu.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="https://awesomedevelopers.eu/" class="is-highlighted" title="Vývojářská společnost - Awesome Developers">awesomedevelopers.eu</a></b><br>
+                                Adresa: <b class="strong">Lublaňská, 120 00 Praha 2 - Nové Město</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.6260523992328!2d14.43097100570212!3d50.07240113626134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94896d57651b%3A0x537fd0cfb3184397!2zTHVibGHFiHNrw6EsIDEyMCAwMCBQcmFoYSAy!5e0!3m2!1scs!2scz!4v1544535039292" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!--
+                    --><div class="half">
+                        <div>
+                            <h3 class="cBlue">Lékárna u Sv. Ludmily</h3>
+                            <p class="space-l fs-s">Po celý den si můžete v lékárně vyzvednout své léky na lékařský předpis. Lékárna také zajišťuje prodej léků, léčiv, vitamínů a potravinových doplňků. Mimo pracovní dobu funguje jako pohotovost.</p>
+                            <div class="fs-s">
+                                Webová stránka: <b class="strong"><a target="_blank" href="http://www.lekarnabelgicka.cz/" class="is-highlighted" title="Lékárna - U Sv. Ludmily">lekarnabelgicka.cz</a></b><br>
+                                Adresa: <b class="strong">Belgická, 120 00 Praha 2 - Vinohrady</b><br><br>
+                                <div class="map-responsive">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1522.6140914916584!2d14.43549330633068!3d50.07277783232506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b9488bcfb9591%3A0x3e2cc3c55c0a9255!2sBelgick%C3%A1%2C+120+00+Praha+2!5e0!3m2!1scs!2scz!4v1544535202091" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen space-xxxl u-uppercase u-mw-m">Úklid vašich kanceláří nechte na náš úklidový personál. Je to snadné.</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná objednávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„objednat úklid“</a> <strong>jednoduše vyplníte nezávaznou</strong> poptávku úklidu kanceláře a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Při společném setkání nastavíme úklidový plán <strong>šitý na míru</strong> Vašim potřebám a vybereme zaměstnance úklidového personálu <strong>dle Vašich preferencí</strong>.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s">Ve stanovený čas prostory Vaší společnosti uklidí <strong>spolehlivý a odborně proškolený</strong> zaměstnanec našeho úklidového personálu.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">Díky naší <strong>garanci spokojenosti a kvality</strong> si užíváte příchod do čistě uklizených kanceláří a prostor společnosti.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-separateWhite">
+                <div class="content u-center">
+                    <h4 class="fs-xxl fNunito cGreen space-xxl u-uppercase u-mw-m">100% garance kvality a záruka vrácení peněz.</h4>
+                    <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'Footer', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Nezávazná poptávka úklidu kanceláří na Praze 2">Chcete spolehlivý úklid?</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

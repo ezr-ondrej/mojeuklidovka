@@ -1,0 +1,117 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Nabídka práce úklidu kanceláří</h1>
+            <p class="hero_text">Pro společnosti s firemními prostory a kancelářemi v Praze hledáme spolehlivý úklidový personál.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                        <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url_route('pageCareer') }}" title="Kariéra v úklidu">
+                    <span itemprop="name">Kariéra</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageCareerOffice') }}" title="Nabídka práce úklidu kanceláří">
+                    <span itemprop="name">Úklid kanceláří</span>
+                    <meta itemprop="position" content="3" />
+                </a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content content-s">
+                <p class="fs-xxl fNunito cBlue space-xxl u-mw-m u-center">Tyto pracovní příležitosti jsou pouze pro osoby se zdravotním postižením (OZP) na chráněném pracovním místě.</p>
+
+                {% if careerList | length >= 1 %}
+                    <h2 class="cGreen">Aktuálně hledáme:</h2>
+                    <p class="space-xxl">Níže můžete nalézt naše aktuálně nabízené pracovní nabídky v úklidu kancelářských prostor a kanceláří. Nezoufejte ale, pokud jste nenalezli žádnou pro Vás vhodnou pozici nebo lokalitu. Každý den máme nové zákazníky a pokud se nám ozvete, můžeme pro vás najít ideální pracovní pozici.</p>
+
+                    {% for item in careerList %}
+                        <h3 class="fs-xl space-m">{{ item.title }}</h3>
+                        {% if item.description %}
+                            <div class="space-xl fs-s">{{ item.description | raw }}</div>
+                        {% endif %}
+                        <table class="is-styled space-xxl bg-white">
+                            {% if item.address %}
+                                <tr>
+                                    <td>Místo úklidu:</td>
+                                    <td><strong>{{ item.address }}</strong></td>
+                                </tr>
+                            {% endif %}
+                            {% if item.what %}
+                                <tr>
+                                    <td>Typ úklidu:</td>
+                                    <td><strong>{{ item.what }}</strong></td>
+                                </tr>
+                            {% endif %}
+                            {% if item.when %}
+                                <tr>
+                                    <td>Pracovní doba:</td>
+                                    <td><strong>{{ item.when }}</strong></td>
+                                </tr>
+                            {% endif %}
+                            {% if item.repetitiveness %}
+                                <tr>
+                                    <td>Pravidelnost úklidu:</td>
+                                    <td><strong>{{ item.repetitiveness }}</strong></td>
+                                </tr>
+                            {% endif %}
+                            {% if item.salary %}
+                                <tr>
+                                    <td>Platební ohodnocení:</td>
+                                    <td><strong>{{ item.salary }}</strong></td>
+                                </tr>
+                            {% endif %}
+                        </table>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+        </div>
+
+        <div class="section section-m bg-grayLight">
+            <div class="content content-s">
+                <h2>Proč pracovat u nás?</h2>
+                <p class="space-xxl">U nás je <strong>spokojenost zaměstnanců na prvním místě</strong>, proto ke všem úklidovým pomocníkům společnosti MojeÚklidovka přistupujeme individuálně. Vždy se snažíme, aby místo výkonu práce bylo v <strong>dobré vzdálenosti</strong> od Vašeho bydliště a také, aby pracovní doba <strong>vyhovovala Vašim možnostem a preferencím</strong>. Našich zaměstnanců si velmi vážíme, protože víme, že náš úspěch zavisí především na nich.</p>
+
+                <h2>Koho hledáme?</h2>
+                <p class="space-xxl">Hledáme spolehlivé a pečlivé zaměstnance pro <strong>pravidelný úklid kanceláří a komerčních prostor</strong>. Může se jednat o ranní úklid (od 5:00 do 9:00) nebo večerní úklid (17:00 do 21:00). Jste-li spolehliví, samostatní a máte kladný vztah k úklidu kanceláří, pak <strong>hledáme právě Vás</strong>. Požadujeme minimálně základní vzdělání, trestní bezúhonost a budeme rádi, pokud máte předchozí zkušenosti s úklidem.</p>
+
+                <h2>Co vám nabízíme?</h2>
+                <ul class="is-styled space-m">
+                    <li>Přátelský a lidský přístup</li>
+                    <li>Podporu a možnost zaškolení</li>
+                    <li>Nadstandardní platové podmínky: 100,- / hodina</li>
+                    <li>Finanční odměny navíc k základní mzdě</li>
+                </ul>
+                <p>Dále nabízíme zkrácenou <strong>flexibilní pracovní dobu</strong>, kterou společně nastavíme <strong>dle vašich možností a potřeb</strong>. Zaujala Vás naše pracovní nabídka? Splňujete naše požadavky a chcete se stát <strong>součástí přátelského kolektivu</strong>? Napište nám nebo zavolejte na níže uvedené kontakty, rádi vás přivítáme v našem týmu.</p>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="content u-center">
+                <div class="btnGroup">
+                    <a class="btn btn-blue" href="mailto:prace@mojeuklidovka.cz">prace@mojeuklidovka.cz</a>
+                    <a class="btn btn-blue" href="tel:+420725560085">+420 725 560 085</a>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_career | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

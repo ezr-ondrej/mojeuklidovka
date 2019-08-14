@@ -1,0 +1,37 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/blog-moje-uklidovka.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">
+                Kariéra
+            </h1>
+            <p class="hero_text"><a href="/space/career/create">Přidat pracovní pozici</a></p>
+        </div>
+    </div>
+
+    <div class="bg-grayLight">
+        {% if careerList | length >= 1 %}
+
+            {% for item in careerList %}
+                <div class="article">
+                    <div class="article_content">
+                        <h2 class="fs-xl"><span class="underline-grayLight">{{ item.title }}</span></h2>
+                        <div class="space-xl">{{ item.description | raw }}</div>
+                        <a class="btn btn-blue btn-s spaceRight-m" href="{{ url() }}/space/career/edit/{{ item.id }}" title="Upravit pozici">Upravit</a>
+                        <a class="btn btn-blue btn-s" onClick="if(!confirm('Odstranit pozici?')) return false;" href="{{ url() }}/space/career/delete/{{ item.id }}" title="Smazat pozici">Smazat</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {{ data.careerListLinks | raw }}
+
+        {% endif %}
+
+    </div>
+
+    {{ footer | raw }}
+
+</div>

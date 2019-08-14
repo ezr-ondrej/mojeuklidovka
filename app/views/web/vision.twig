@@ -1,0 +1,39 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/kocka-v-uklizenem-byte.jpg?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Vize společnosti MojeÚklidovka</h1>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="section section-m">
+            <div class="content content-s">
+                <h2 class="fs-xxl fNunito cBlue space-xxl u-mw-m u-center">Spolehlivé úklidové služby pro Prahu.</h2>
+                <p>MojeÚklidovka je moderní společnost nabízející <a href="{{ url_route('pageServices') }}" title="Úklidové služby Praha"><strong>úklidové služby</strong></a> v Praze. Naším cílem je přinášet zákazníkům <strong>prvotřídní úklidovou službu</strong>, při dodržování vysokých standardů kvality nejen úklidu ale i zákaznické podpory.</p>
+                <p>Vždy nám jde o maximálně <strong>spokojeného zákazníka</strong>, se kterým chceme budovat <strong>dlouhodobé partnerství</strong>. Vycházíme maximálně vstříc Vašim požadavkům na úklid. Uvědomujeme si, jak je v dnešní době důležitá vzájemná důvěra. S námi se nebudete muset <strong>nikdy strachovat</strong> o svůj majetek. K úklidu používáme pouze profesionální a zároveň ekologicky šetrné čistící prostředky a přinášíme do úklidových služeb použití nejnovějších technických postupů.</p>
+                <p>Ať už v Praze hledáte spolehlivou úklidovou službu pro Váš <a href="{{ url_route('pageFlat') }}" title="Naše úklidové služby pro byty">byt</a>, <a href="{{ url_route('pageOffice') }}" title="Naše úklidové služby pro kanceláře a komerční prostory.">kancelář</a> nebo <a href="{{ url_route('pageFloor') }}" title="Naše úklidové služby pro Váš bytový dům.">bytový dům</a>, můžete se na nás kdykoli obrátit. Poskytujeme úklidové služby, které máte rádi.</p>
+            </div>
+        </div>
+
+        <div class="section section-m bg-grayLight">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen u-mw-m space-xs">{{ "web.title_100" | trans }}</h2>
+            </div>
+        </div>
+
+        <div class="section section-m">
+            <div class="u-center">
+                <a class="btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrderOffice', 'web.vision');" href="{{ url_route('pageServices') }}" title="Naše úklidové služby pro Prahu">Vyzkoušejte naše úklidové služby</a>
+            </div>
+        </div>
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

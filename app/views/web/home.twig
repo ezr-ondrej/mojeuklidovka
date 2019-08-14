@@ -1,0 +1,140 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle" style="background-image: url('{{ url() }}/assets/web/img/uklizeny-stul-s-kvetinami.jpg?{{ appVersion }}')">
+
+        <div class="hero_image js-heroImage is-active" style="background-image: url('{{ url() }}/assets/web/img/uklizeny-stul-s-kvetinami.jpg?{{ appVersion }}')"></div>
+        <div class="hero_image js-heroImage" style="background-image: url('{{ url() }}/assets/web/img/uklid-kancelari.jpg?{{ appVersion }}')"></div>
+        <div class="hero_image js-heroImage" style="background-image: url('{{ url() }}/assets/web/img/uklid-domacnosti.jpg?{{ appVersion }}')"></div>
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title"><a href="{{ url() }}/blog/uklidime-vas-stres" title="Uklidíme Váš stres">Uklidíme Váš stres</a></h1>
+            <p class="hero_text">v kanceláři, domácnosti nebo bytovém domě.<br>Přinášíme úklidové služby, které máte rádi.</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroOrder', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="Chcete vypracovat cenovou nabídku? Klikněte pro nezávaznou poptávku našich úklidových služeb MojeÚklidovka.">Nezávazná poptávka úklidu</a>
+        </div>
+        <div class="hero_content js-heroContent">
+            <h2 class="hero_title title-h1"><a href="{{ url_route('pageOffice') }}" title="Náš úklidový balíček pro kanceláře a firemní prostory.">Moje Firma</a></h2>
+            <p class="hero_text">Pečlivě uklizené kanceláře a čisté komerční prostory.<br> Dopřejte svým zaměstnancům a zákazníkům pocit příjemně čistého prostředí.</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroMoreOffice', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOffice') }}" title="Více o úklidu kanceláří v Praze">Více o úklidu kanceláří</a>
+        </div>
+        <div class="hero_content js-heroContent">
+            <h2 class="hero_title title-h1"><a href="{{ url_route('pageHome') }}" title="Náš úklidový balíček pro domácnosti.">Můj Domov</a></h2>
+            <p class="hero_text">Volný čas věnujte tomu, co Vás baví.<br> Náš úklidový personál pro vás mezitím připraví útulnou domácnost.</p>
+            <a class="hero_btn btn btn-blue" onClick="ga('send', 'event', 'Clicks', 'HeroMoreHome', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageHome') }}" title="Více o úklidu domácnosti v Praze">Více o úklidu domácností</a>
+        </div>
+
+        <div class="hero_bullets">
+            <div class="hero_bullets_item js-heroBullet is-active"></div><!--
+            --><div class="hero_bullets_item js-heroBullet"></div><!--
+            --><div class="hero_bullets_item js-heroBullet"></div>
+        </div>
+    </div>
+
+    <div id="spolehlivyUklid" class="page_content">
+        <div class="breadcrumbs">
+            <div class="content content-s u-center">
+                <a class="breadcrumbs_item cBlue fNunito fs-m" onClick="ga('send', 'event', 'Clicks', 'TopPageOffice', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOffice') }}" title="Úklid kanceláří">Úklid kanceláří</a>
+                <span class="breadcrumbs_separator cGrayLighter">•</span>
+                <a class="breadcrumbs_item cBlue fNunito fs-m" onClick="ga('send', 'event', 'Clicks', 'TopPageHome', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageHome') }}" title="Úklid domácností">Úklid domácností</a>
+                <span class="breadcrumbs_separator cGrayLighter">•</span>
+                <a class="breadcrumbs_item cBlue fNunito fs-m" onClick="ga('send', 'event', 'Clicks', 'TopPageFlats', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageFlats') }}" title="Úklid bytových domů">Úklid bytových domů</a>
+            </div>
+        </div>
+        <div class="section section-m">
+            <div class="content u-center">
+                <h2 class="fs-xxl fNunito cGreen space-xxxl u-uppercase u-mw-m">{{ "web.title_orderEasy" | trans }}</h2>
+                <div class="row">
+                    <div class="step">
+                        <div class="stepCircle"><span>1</span></div>
+                        <h3>Nezávazná poptávka</h3>
+                        <p class="fs-s">Na stránce <a onClick="ga('send', 'event', 'Clicks', 'steps', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageOrder') }}" title="{{ "web.order" | trans }}">„nezávazná poptávka“</a> vyplníte <strong>jednoduchý formulář</strong> pro vyžádání cenové nabídky našich úklidových služeb a my se Vám co nejdříve ozveme.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>2</span></div>
+                        <h3>Osobní setkání</h3>
+                        <p class="fs-s">Na základě osobního setkání vyhotovíme <strong>cenovou nabídku</strong> a plán úklidových služeb <strong>šitý na míru</strong> Vašim potřebám a preferencím.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>3</span></div>
+                        <h3>Profesionální úklid</h3>
+                        <p class="fs-s"><strong>Spolehlivý a odborně proškolený</strong> zaměstnanec našeho úklidového personálu pro Vás vše uklidí na dohodnutém místě a ve stanovený čas.</p>
+                    </div><!--
+                    --><div class="step">
+                        <div class="stepCircle"><span>4</span></div>
+                        <h3>Spokojený zákazník</h3>
+                        <p class="fs-s">Díky naší <strong>garanci spokojenosti a kvality</strong> se můžete těšit na návrat do uklizeného domova a příchod do čistého prostředí Vaší společnosti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="more" class="section section-l bg-grayLight">
+            <div class="content space-xxl">
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-heart-filled" viewBox="0 0 50 50"><use xlink:href="#icon-heart-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h3 class="fs-xxl">Garance spokojenosti</h3>
+                        <p><strong>Na prvním místě</strong> je pro nás vždy <strong>spokojený zákazník</strong>. V Praze Vám přinášíme spolehlivé úklidové služby a samozřejmou kontrolu kvality provedeného úklidu. V případě nespokojenosti s provedeným úklidem jsme připraveni vše napravit a navrátit Vám zpět <strong>úsměv na tváři</strong>.</p>
+                    </div>
+                </div>
+                <div id="kontrolaUklidu" class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-quality-filled" viewBox="0 0 50 50"><use xlink:href="#icon-quality-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h3 class="fs-xxl">Kontrola kvality úklidu</h3>
+                        <p>Dodržování standardů kvality úklidových služeb zajišťuje tým kontrolorů společnosti MojeÚklidovka, který systematicky <strong>ověřuje čistotu</strong> a <strong>správné provedení úklidu</strong> u všech našich zákazníků. Vyzkoušejte si nás pro svůj <a href="{{ url_route('pageFlat') }}" title="Úklid bytů v Praze">byt</a> nebo <a href="{{ url_route('pageOffice') }}" title="Úklid kanceláří v Praze">kancelář</a> v Praze a přesvědčte se, že se na nás <strong>můžete spolehnout</strong>.</p>
+                    </div>
+                </div>
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-insurance-filled" viewBox="0 0 50 50"><use xlink:href="#icon-insurance-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h3 class="fs-xxl">Pojištění úklidových služeb</h3>
+                        <p><strong>Vzájemná důvěra</strong> je jedna z našich hlavních priorit. Z toho důvodu máme sjednáno pojištění <strong>odpovědnosti za škodu</strong> až do výše <strong>1&nbsp;000&nbsp;000,-&nbsp;Kč</strong>. Nemusíte se tedy obávat neočekávané nehody, které předcházíme díky zaměstnávání <strong>jen zkušených pracovníků</strong>.</p>
+                    </div>
+                </div>
+                <div class="badge clearfix">
+                    <div class="badge_icon">
+                        <svg class="icon-clean-filled" viewBox="0 0 50 50"><use xlink:href="#icon-clean-filled"></use></svg>
+                    </div>
+                    <div class="badge_content">
+                        <h3 class="fs-xxl">Zdarma čistící prostředky</h3>
+                        <p>Uvědomujeme si, že Vám na Vašem majetku velmi záleží. S námi se o něj nemusíte bát. Ať už pro Vás v Praze zajišťujeme <a href="{{ url_route('pageHome') }}" title="Úklidové služby pro domácnosti v Praze">úklid domácnosti</a>, <a href="{{ url_route('pageFloor') }}" title="Úklidové služby pro bytové domy v Praze">domu</a> nebo <a href="{{ url_route('pageOffice') }}" title="Úklidové služby pro kanceláře a komerční prostory v Praze">kanceláře</a>, používáme pouze <strong>profesionální čistící prostředky</strong>, které jsou šetrné k Vašemu majetku a jsou ekologické k životnímu prostředí. Navíc Vám je nabízíme <strong>zdarma v ceně</strong> úklidových služeb.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="u-center">
+                <a class="btn btn-positive" onClick="ga('send', 'event', 'Clicks', 'TextWhyUs_2', 'web.{{ data.currentRouteName }}');" href="{{ url_route('pageWhyUs') }}" title="Proč zvolit naše úklidové služby">Zobrazit více výhod</a>
+            </div>
+        </div>
+
+        {% if newsNewest | length >= 1 %}
+            <div class="section section-m">
+                <div class="content row row-spaced js-equalize-container">
+                    {% spaceless %}
+                        {% for item in newsNewest %}
+                            <div class="half">
+                                <h4 class="title-h3"><a onClick="ga('send', 'event', 'Clicks', 'news_title', 'web.{{ data.currentRouteName }}');" href="/novinky/{{ item.slug }}" title="{{ item.title }}">{{ item.title }}</a></h4>
+                                <div class="box">
+                                    <p class="space-l js-equalize-target">{{ item.introduction }}</p>
+                                    <a class="btn btn-blue btn-s" onClick="ga('send', 'event', 'Clicks', 'news_button', 'web.{{ data.currentRouteName }}');" href="/novinky/{{ item.slug }}" title="{{ item.title }}">Přečíst novinku</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endspaceless %}
+                </div>
+            </div>
+        {% endif %}
+
+        {{ footer_services | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

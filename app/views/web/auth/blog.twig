@@ -1,0 +1,42 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}/assets/web/img/blog-moje-uklidovka.jpg')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">
+                Blog
+            </h1>
+            <p class="hero_text"><a href="/space/blog/create">Přidat článek</a></p>
+        </div>
+    </div>
+
+    <div class="bg-grayLight">
+        {% if blogList | length >= 1 %}
+
+            {% for item in blogList %}
+                <div class="blogList">
+                    <div class="blogList_content">
+                        <a class="blogPost_headerImage" href="{{ url() }}/blog/{{ item.slug }}" title="{{ item.title }}">
+                            <img class="responsiveImage" src="{{ url() }}/files/blog/{{ item.image }}_s.jpg" alt=""/>
+                            <span class="blog_title">
+                                <h2 class="cWhite fs-xl"><span class="underline-grayLight">{{ item.title }}</span></h2>
+                            </span>
+                        </a>
+                        <p class="space-xl">{{ item.introduction }}</p>
+                        <a class="btn btn-blue btn-s spaceRight-m" href="{{ url() }}/space/blog/edit/{{ item.id }}" title="Upravit článek">Upravit</a>
+                        <a class="btn btn-blue btn-s" onClick="if(!confirm('Odstranit článek?')) return false;" href="{{ url() }}/space/blog/delete/{{ item.id }}" title="Smazat článek">Smazat</a>
+                    </div>
+                </div>
+            {% endfor %}
+
+            {{ data.blogListLinks | raw }}
+
+        {% endif %}
+
+    </div>
+
+    {{ footer | raw }}
+
+</div>

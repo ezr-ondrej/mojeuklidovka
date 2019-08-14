@@ -1,0 +1,126 @@
+<div class="page">
+
+    {{ header | raw }}
+
+    <div id="hero" class="hero hero-middle hero-s" style="background-image: url('{{ url() }}{{ meta_image | raw }}?{{ appVersion }}')">
+
+        <div class="hero_content js-heroContent is-active">
+            <h1 class="hero_title">Kariéra v úklidu</h1>
+            <p class="hero_text">Úspěch naší společnosti závisí především na kvalitě našich úklidových pomocníků.</p>
+        </div>
+    </div>
+
+    <div class="page_content">
+        <div class="breadcrumbs">
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" class="content content-s">
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item" href="{{ url() }}" title="Moje Úklidovka"><svg class="icon iconSize-m icon-house" viewBox="0 0 512 512">
+                    <use xlink:href="#icon-house"></use></svg>
+                    <span itemprop="name" class="hidden">Úvod</span>
+                    <meta itemprop="position" content="1" />
+                </a>
+                <span class="breadcrumbs_separator cGrayLighter">›</span>
+                <a itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumbs_item is-active" href="{{ url_route('pageCareer') }}" title="Kariéra v úklidu">
+                    <span itemprop="name">Kariéra</span>
+                    <meta itemprop="position" content="2" />
+                </a>
+            </div>
+        </div>
+
+        <div class="bg-grayLight u-bt-0">
+            <div class="content content-s">
+
+                <div class="section section-m bg-grayLight u-bt-0">
+                    <div class="content content-s">
+                        <a href="{{ url_route('pageCareerOffice') }}" title="Nabídka práce - úklid kanceláří">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-company" viewBox="0 0 50 50"><use xlink:href="#icon-company"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Nabízíme práci v úklidu kanceláří a komerčních prostor</h2>
+                                    <p class="space-xl">Pro zákazníky z kancelářských a komerčních prostor v Praze hledáme spolehlivé úklidové zaměstnance pro náš úklidový personál. Vašim úkolem může být úklid kanceláří, zasedacích místností, kuchyněk, toalet, firemní prodejny nebo dalších prostor.</p>
+                                    {% if careerOffices | length >= 1 %}
+                                        <h3 class="cGrayLighter fs-s">Aktuální nabídka zaměstnání:</h3>
+                                        {% for item in careerOffices %}
+                                            <p class="fs-s space-xs">
+                                                <span class="underline-green">{{ item.title }}</span>
+                                            </p>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section section-m bg-grayLight">
+                    <div class="content content-s">
+                        <a href="{{ url_route('pageCareerHome') }}" title="Nabídka práce - úklid domácností">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-home" viewBox="0 0 50 50"><use xlink:href="#icon-home"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Nabízíme práci v úklidu domácností</h2>
+                                    <p class="space-xl">Nabízíme práci v úklidu domácností našich zákazníků v Praze. Budete mít na starosti čistotu bytů nebo rodinných domů. Úklid zahrnuje obytné místnosti jako předsíně, chodby, obývací pokoje, toalety, koupelny a kuchyně.</p>
+                                    {% if careerHome | length >= 1 %}
+                                        <h3 class="cGrayLighter fs-s">Aktuální nabídka zaměstnání:</h3>
+                                        {% for item in careerHome %}
+                                            <p class="fs-s space-xs">
+                                                <span class="underline-green">{{ item.title }}</span>
+                                            </p>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="section section-m bg-grayLight">
+                    <div class="content content-s space-xxxl">
+                        <a href="{{ url_route('pageCareerFlats') }}" title="Nabídka práce - úklid bytových domů">
+                            <div class="badge clearfix">
+                                <div class="badge_icon ">
+                                    <svg class="icon icon-flats" viewBox="0 0 50 50"><use xlink:href="#icon-flats"></use></svg>
+                                </div>
+                                <div class="badge_content">
+                                    <h2 class="fs-xxl cBlue space-m">Nabízíme práci v úklidu bytových domů</h2>
+                                    <p class="space-xl">Hledáme spolehlivé pomocníky pro úklid společných prostor bytových domů. Na této pracovní pozici budete mít na starosti úklid chodníků, schodišť, zábradlí, mytí vchodových dveří, zametání chodníků a parapetů.</p>
+                                    {% if careerFlats | length >= 1 %}
+                                        <h3 class="cGrayLighter fs-s">Aktuální nabídka zaměstnání:</h3>
+                                        {% for item in careerFlats %}
+                                            <p class="fs-s space-xs">
+                                                <span class="underline-green">{{ item.title }}</span>
+                                            </p>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="kariera" class="section section-m">
+            <div class="content content-shrinked u-center">
+                <div class="space-xl">
+                    <h2 class="cBlue space-xl">Hledáte práci v úklidu?</h2>
+                    <p>V naší úklidové společnosti vždy rádi přivítáme spolehlivé a pečlivé zaměstnance. Jste-li z Prahy, zašlete nám email na níže uvedenou adresu s vašimi kontaktními údaji a profesním životopisem. Splníte-li očekávání našich zákazníků, rádi Vás přivítáme v úklidovém týmu MojíÚklidovky.</p>
+                </div>
+                <div class="u-center">
+                    <div class="btnGroup">
+                        <a class="btn btn-blue" href="mailto:prace@mojeuklidovka.cz">prace@mojeuklidovka.cz</a>
+                        <a class="btn btn-blue" href="tel:+420725560085">+420 725 560 085</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ footer_career | raw }}
+
+        {{ footer | raw }}
+
+    </div>
+</div>

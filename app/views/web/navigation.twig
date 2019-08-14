@@ -1,0 +1,42 @@
+<header>
+    <div id="header" class="header">
+        <div class="header_content">
+
+            <a class="header_logo" href="{{ url() }}">
+                MojeÚklidovka.cz
+            </a>
+
+            <div class="header_right">
+                <nav>
+                    <ul id="navigation" class="navigation" role="navigation">
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuServices', 'web.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'pageServices' %}is-active{% endif %}" href="{{ url_route('pageServices') }}" title="{{ "web.services_title" | trans }}">
+                                {{ "web.services" | trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuWhyUs', 'web.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'pageWhyUs' %}is-active{% endif %}" href="{{ url_route('pageWhyUs') }}" title="{{ "web.order_title" | trans }}">
+                                Proč nás?
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuOrder', 'web.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'pageOrder' %}is-active{% endif %}" href="{{ url_route('pageOrder') }}" title="{{ "web.order_title" | trans }}">
+                                {{ "web.order" | trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuBlog', 'web.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'pageBlog' %}is-active{% endif %}" href="{{ url_route('pageBlog') }}" title="{{ "web.blog_title" | trans }}">
+                                {{ "web.blog" | trans }}
+                            </a>
+                        </li>
+                        <li>
+                            <a onClick="ga('send', 'event', 'Clicks', 'MenuContact', 'web.{{ data.currentRouteName }}');" class="navigation_link {% if data.currentRouteName == 'pageContact' %}is-active{% endif %}" href="{{ url_route('pageContact') }}" title="{{ "web.contact_title" | trans }}">
+                                Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
